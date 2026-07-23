@@ -1,0 +1,61 @@
+# Defensive Security Intro
+
+## Room Information
+
+- **Platform:** TryHackMe
+- **Category:** Defensive Security
+- **Difficulty:** Beginner
+
+## Overview
+
+This room introduces the fundamentals of defensive security by demonstrating how security professionals detect, investigate, and respond to cyberattacks. The practical exercise involves protecting a simulated banking environment (FakeBank) from an ongoing attack.
+
+## Learning Objectives
+
+- Understand the role of defensive security.
+- Learn how Security Operations Centers (SOCs) monitor and respond to threats.
+- Gain exposure to log analysis and incident response.
+- Understand the importance of proactive security monitoring.
+
+## Key Concepts
+
+### Defensive Security
+Defensive security focuses on preventing, detecting, and responding to cyber threats to protect systems and data.
+
+### Security Operations Center (SOC)
+A SOC continuously monitors networks and systems, investigates alerts, and coordinates incident response activities.
+
+### Incident Response
+Incident response involves identifying, analyzing, containing, eradicating, and recovering from security incidents.
+
+### Log Monitoring
+System and application logs provide valuable information for identifying suspicious activities and investigating attacks.
+
+## Skills Practiced
+
+- Security monitoring
+- Basic incident investigation
+- Log analysis
+- Threat detection
+- Defensive security mindset
+
+## Tools Used
+
+- Web Browser
+- TryHackMe AttackBox
+- FakeBank Monitoring Dashboard
+
+## Key Takeaways
+
+- Defensive security is as important as offensive security.
+- Continuous monitoring helps detect attacks early.
+- Logs are essential for identifying malicious activity.
+- A structured incident response process minimizes the impact of cyberattacks.
+
+## Notes
+
+This room introduces the day-to-day responsibilities of defensive security professionals and highlights the importance of monitoring, investigation, and timely response to security incidents.
+
+---
+
+> **Disclaimer:** This repository contains personal learning notes only. It does not include flags, credentials, or complete walkthroughs, in accordance with TryHackMe's content guidelines.
