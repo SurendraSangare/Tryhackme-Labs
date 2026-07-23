@@ -1,0 +1,46 @@
+# TryHackMe - W1seGuy
+
+## Room
+https://tryhackme.com/room/w1seguy
+
+## Category
+Cryptography
+
+## Difficulty
+Easy
+
+## Description
+W1seGuy is a cryptography challenge based on XOR encryption and a known plaintext attack.
+
+## Concepts Learned
+
+- XOR encryptions
+- Known plaintext attacks
+- Key recovery
+- Brute forcing XOR keys
+- Python scripting
+
+## Approach
+
+The challenge provides an XOR encrypted ciphertext. Since the flag format starts with:
+THM{
+
+  
+After recovering the partial key, the remaining character was brute-forced to obtain the complete XOR key and decrypt the flag.
+
+## Tools Used
+
+- Netcat
+- Python
+- CyberChef
+
+## Solution
+
+The XOR key was recovered by exploiting the known plaintext (`THM{`) and then used to decrypt the complete ciphertext.
+
+THM{p1alntExtAtt4ckcAnr3alLyhUrty0urxOr
+
+    
+## Takeaways
+
+This challenge demonstrated why using simple XOR encryption with a repeating key is insecure when part of the plaintext is known.
