@@ -1,0 +1,137 @@
+# Inside a Computer System
+
+![TryHackMe](https://tryhackme-badges.s3.amazonaws.com/yourusername.png)
+
+## Room Information
+
+- **Platform:** TryHackMe
+- **Room:** Inside a Computer System
+- **Difficulty:** Easy
+- **Category:** Computer Fundamentals
+
+## Description
+
+This room covers the basic components of a computer system and provides an introduction to how computers work internally.
+
+The room focuses on understanding hardware components, their functions, and the basic concepts required for working with computer systems.
+
+---
+
+# Learning Objectives
+
+By completing this room, I learned:
+
+- Basic components of a computer system
+- Difference between hardware and software
+- Functions of CPU, RAM, storage devices, and motherboard
+- How different components communicate with each other
+- Basic computer architecture concepts
+
+---
+
+# Topics Covered
+
+## 1. Computer Hardware
+
+Understanding the physical components of a computer:
+
+- CPU (Central Processing Unit)
+- RAM (Random Access Memory)
+- Storage Devices
+- Motherboard
+- Power Supply Unit
+- Input and Output Devices
+
+
+## 2. CPU
+
+The CPU acts as the brain of the computer.
+
+It performs:
+
+- Calculations
+- Logical operations
+- Instruction processing
+
+Important CPU components:
+
+- ALU (Arithmetic Logic Unit)
+- Control Unit
+- Registers
+
+
+## 3. Memory
+
+### RAM
+
+RAM is temporary memory used by the computer to store currently running programs and processes.
+
+Characteristics:
+
+- Volatile memory
+- Faster than storage devices
+- Data is lost when power is removed
+
+
+### Storage
+
+Storage devices permanently store data.
+
+Examples:
+
+- HDD
+- SSD
+- USB Drives
+
+
+## 4. Motherboard
+
+The motherboard connects all computer components together.
+
+It contains:
+
+- CPU socket
+- RAM slots
+- Expansion slots
+- Storage connectors
+
+
+---
+
+# Key Takeaways
+
+- A computer system consists of hardware and software components.
+- CPU processes instructions and controls operations.
+- RAM provides temporary working space for active programs.
+- Storage devices preserve data permanently.
+- The motherboard acts as the communication hub between components.
+
+
+---
+
+# Notes
+
+## Hardware vs Software
+
+| Hardware | Software |
+|----------|----------|
+| Physical components | Programs and applications |
+| CPU | Operating System |
+| RAM | Web Browser |
+| HDD/SSD | Antivirus |
+
+
+---
+
+# Room Status
+
+✅ Completed
+
+---
+
+## Author
+
+**Surendra Sangare**
+
+Cybersecurity Learning Journey  
+TryHackMe Writeups
