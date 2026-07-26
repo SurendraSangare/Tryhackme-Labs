@@ -1,0 +1,60 @@
+# Computer Types
+
+## Room Information
+
+- **Platform:** TryHackMe
+- **Category:** Computer Fundamentals
+- **Difficulty:** Beginner
+
+## Overview
+
+This room introduces the different types of computers and their real-world applications. It covers everything from personal computers and workstations to servers, mainframes, supercomputers, and embedded systems, providing a solid foundation for anyone beginning a career in IT or cybersecurity.
+
+## Learning Objectives
+
+- Understand the different categories of computers.
+- Learn the purpose and use cases of each computer type.
+- Identify where different computing systems are commonly used.
+- Build foundational knowledge of modern computing environments.
+
+## Key Concepts
+
+### Personal Computers (PCs)
+General-purpose computers designed for individual users, including desktops and laptops used for work, education, entertainment, and everyday computing.
+
+### Workstations
+High-performance computers built for demanding tasks such as software development, engineering, 3D rendering, scientific computing, and multimedia production.
+
+### Servers
+Powerful systems that provide services, applications, and resources to multiple users or devices across a network.
+
+### Mainframes
+Enterprise-grade computers capable of processing millions of transactions reliably and efficiently, commonly used in banking, healthcare, government, and large organizations.
+
+### Supercomputers
+The fastest and most powerful computing systems, designed to solve highly complex computational problems such as climate modelling, scientific simulations, artificial intelligence, and space research.
+
+### Embedded Systems
+Special-purpose computers integrated into larger devices to perform dedicated functions. Examples include smart TVs, vehicles, medical devices, home appliances, and IoT devices.
+
+## Skills Practiced
+
+- Understanding computer classifications
+- Identifying enterprise and consumer computing systems
+- Recognizing real-world computing environments
+- Building foundational IT and cybersecurity knowledge
+
+## Key Takeaways
+
+- Computers are designed for different purposes depending on performance and functionality.
+- Servers, mainframes, and supercomputers power critical business and scientific operations.
+- Embedded systems are widely used in everyday devices and form the backbone of the Internet of Things (IoT).
+- Understanding computer types is essential before learning networking, operating systems, and cybersecurity.
+
+## Notes
+
+This room provides a strong introduction to the various types of computers found in personal, enterprise, and industrial environments. It establishes the foundational knowledge required for further studies in IT, networking, and cybersecurity.
+
+---
+
+> **Disclaimer:** This repository contains personal learning notes only. It does not include flags, credentials, or complete walkthroughs, in accordance with TryHackMe's content guidelines.
