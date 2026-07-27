@@ -1,0 +1,66 @@
+# Client-Server Basics
+
+> Learn the fundamentals of the client-server model and how devices communicate across networks.
+
+## 📝 Room Information
+
+- **Platform:** TryHackMe
+- **Room:** Client-Server Basics
+- **Difficulty:** Easy
+- **Category:** Computer Fundamentals / Networking
+
+## 🎯 Objective
+
+This room introduces the core concepts of client-server communication, explaining how clients request services from servers and how data is exchanged using networking protocols. It provides a beginner-friendly foundation for understanding how modern applications and the internet function. :contentReference[oaicite:0]{index=0}
+
+## 📚 Key Concepts Covered
+
+- Client and Server architecture
+- Request and Response model
+- IP Addresses
+- DNS (Domain Name System)
+- Ports
+- Network Protocols
+- HTTP communication basics
+- URLs and web requests
+
+## 🛠 Skills Gained
+
+- Understanding the client-server communication model
+- Identifying the roles of clients and servers
+- Learning how DNS resolves domain names
+- Understanding why ports are required for network services
+- Recognizing common networking protocols
+- Interpreting basic web communication
+
+## 🔍 Summary
+
+In this room, I explored how devices communicate over a network using the client-server model. I learned how clients send requests, servers process those requests, and responses are returned using standard protocols such as HTTP. The room also introduced DNS, IP addressing, and ports, which are essential building blocks of networking and cybersecurity. :contentReference[oaicite:1]{index=1}
+
+## 🚀 Key Takeaways
+
+- Every network service relies on the client-server model.
+- DNS translates human-readable domain names into IP addresses.
+- Ports allow multiple services to run on a single host.
+- Protocols define the rules for communication.
+- Understanding networking fundamentals is essential before learning cybersecurity.
+
+## 📁 Repository Structure
+
+```
+Client-Server-Basics/
+├── README.md
+└── screenshots/
+```
+
+## 📖 Resources
+
+- TryHackMe – Client-Server Basics
+- Networking Fundamentals
+- HTTP & DNS Basics
+
+---
+
+**Status:** ✅ Completed
+
+*Documented as part of my cybersecurity learning journey through TryHackMe.*
