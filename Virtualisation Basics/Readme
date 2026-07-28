@@ -1,0 +1,102 @@
+# Virtualisation Basics
+
+## Overview
+
+This lab introduces the fundamentals of virtualisation, a core technology widely used in cybersecurity, cloud computing, and enterprise IT. It covers how virtual machines work, the role of hypervisors, and the advantages of running multiple operating systems on a single physical machine.
+
+Understanding virtualisation is essential for penetration testing, malware analysis, security research, and building isolated lab environments.
+
+---
+
+## Objectives
+
+- Understand what virtualisation is
+- Learn the difference between Type 1 and Type 2 hypervisors
+- Explore how virtual machines operate
+- Identify the benefits and limitations of virtualisation
+- Recognise common use cases in cybersecurity
+
+---
+
+## Key Concepts
+
+### Virtual Machine (VM)
+A software-based computer that runs its own operating system while sharing the hardware resources of a physical host.
+
+### Hypervisor
+Software responsible for creating and managing virtual machines.
+
+- **Type 1 (Bare Metal)**
+  - Runs directly on physical hardware
+  - Higher performance
+  - Common in enterprise environments
+
+- **Type 2 (Hosted)**
+  - Runs on top of an existing operating system
+  - Easier to install and use
+  - Ideal for personal labs and learning
+
+### Host vs Guest
+
+- **Host:** Physical machine running the hypervisor
+- **Guest:** Operating system running inside the virtual machine
+
+---
+
+## Benefits of Virtualisation
+
+- Better hardware utilisation
+- Run multiple operating systems simultaneously
+- Safe environment for security testing
+- Easy backup and snapshot management
+- Rapid deployment of systems
+- Isolation between virtual machines
+- Cost-effective infrastructure
+
+---
+
+## Cybersecurity Relevance
+
+Virtualisation is extensively used for:
+
+- Malware analysis
+- Penetration testing labs
+- Vulnerability research
+- Digital forensics
+- Network simulations
+- Incident response training
+- Safe testing of exploits and tools
+
+---
+
+## Tools & Technologies Mentioned
+
+- VMware Workstation
+- Oracle VirtualBox
+- Microsoft Hyper-V
+- KVM
+- Xen
+
+---
+
+## Skills Gained
+
+- Understanding virtualisation fundamentals
+- Identifying hypervisor types
+- Differentiating host and guest operating systems
+- Recognising enterprise and security use cases
+- Building foundational knowledge for cybersecurity labs
+
+---
+
+## Lab Status
+
+- **Platform:** TryHackMe
+- **Room:** Virtualisation Basics
+- **Status:** ✅ Completed
+
+---
+
+## Key Takeaway
+
+Virtualisation enables multiple isolated operating systems to run efficiently on a single physical machine. It is one of the foundational technologies behind modern cybersecurity labs, cloud infrastructure, and enterprise computing.
