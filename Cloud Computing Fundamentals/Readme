@@ -1,0 +1,78 @@
+# ☁️ Cloud Computing Fundamentals
+
+## 📖 Overview
+This room introduces the fundamental concepts of cloud computing, including cloud service models, deployment models, virtualization, scalability, and the benefits of cloud-based infrastructure. It provides a solid foundation for understanding how modern cloud platforms deliver computing resources over the internet.
+
+---
+
+## 🎯 Objectives
+- Understand what cloud computing is.
+- Learn the characteristics of cloud computing.
+- Explore cloud service models (IaaS, PaaS, SaaS).
+- Understand deployment models (Public, Private, Hybrid, Multi-cloud).
+- Learn the advantages and challenges of cloud computing.
+- Understand common cloud services and real-world use cases.
+
+---
+
+## 🛠️ Skills Gained
+- Cloud Computing Fundamentals
+- Cloud Service Models
+- Cloud Deployment Models
+- Virtualization Concepts
+- Scalability & Elasticity
+- Pay-as-you-go Pricing
+- Cloud Security Basics
+- Infrastructure Fundamentals
+
+---
+
+## 📚 Key Concepts
+
+### Cloud Service Models
+- **Infrastructure as a Service (IaaS)** – Virtual machines, storage, and networking.
+- **Platform as a Service (PaaS)** – Development platforms and managed environments.
+- **Software as a Service (SaaS)** – Applications delivered over the internet.
+
+### Deployment Models
+- Public Cloud
+- Private Cloud
+- Hybrid Cloud
+- Multi-cloud
+
+### Essential Characteristics
+- On-demand self-service
+- Broad network access
+- Resource pooling
+- Rapid elasticity
+- Measured service
+
+---
+
+## 💡 What I Learned
+During this room, I learned how cloud computing enables organizations to provision computing resources on demand while reducing infrastructure costs. I also explored different service and deployment models and gained a better understanding of scalability, virtualization, and cloud-based architectures.
+
+---
+
+## 🚀 Key Takeaways
+- Cloud computing provides scalable and flexible infrastructure.
+- Organizations pay only for the resources they consume.
+- Different service models offer varying levels of management responsibility.
+- Public, Private, Hybrid, and Multi-cloud deployments serve different business needs.
+- Cloud technologies form the backbone of many modern applications and services.
+
+---
+
+## 📂 Room Information
+- **Platform:** TryHackMe
+- **Category:** Cloud Computing
+- **Difficulty:** Easy
+- **Status:** ✅ Completed
+
+---
+
+## 📝 Notes
+This repository is part of my cybersecurity learning journey, where I document completed TryHackMe rooms, key concepts, and practical takeaways to strengthen my understanding of networking, cloud computing, and cybersecurity fundamentals.
+
+---
+*Learning one room at a time. Building practical cybersecurity skills through consistent hands-on practice.*
