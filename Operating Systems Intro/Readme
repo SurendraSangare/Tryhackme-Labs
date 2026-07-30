@@ -1,0 +1,79 @@
+# 🖥️ Operating Systems: Introduction
+
+## 📌 Overview
+
+This lab introduces the fundamental concepts of operating systems and their role in managing computer hardware and software resources. It covers the core responsibilities of an operating system, different operating system types, and essential system components that form the foundation of modern computing.
+
+---
+
+## 🎯 Objectives
+
+- Understand the purpose of an operating system.
+- Learn the core functions performed by an OS.
+- Explore different types of operating systems.
+- Identify key operating system components.
+- Gain familiarity with user space and kernel space concepts.
+
+---
+
+## 📚 Topics Covered
+
+- What is an Operating System?
+- Functions of an Operating System
+- Kernel vs User Space
+- Process Management
+- Memory Management
+- File Systems
+- Device Management
+- System Calls
+- Types of Operating Systems
+  - Desktop OS
+  - Server OS
+  - Mobile OS
+  - Embedded OS
+
+---
+
+## 🛠️ Skills Learned
+
+- Understanding the role of operating systems in computing
+- Identifying major OS components
+- Basic knowledge of process and memory management
+- Familiarity with file systems and device handling
+- Understanding how applications interact with the operating system
+
+---
+
+## 💡 Key Takeaways
+
+- The operating system acts as the bridge between hardware and software.
+- The kernel is responsible for managing critical system resources.
+- Processes and memory are managed to ensure efficient multitasking.
+- File systems organize and store data on storage devices.
+- Different operating systems are designed for different environments and use cases.
+
+---
+
+## 🚀 Why This Lab Matters
+
+A strong understanding of operating systems is essential for cybersecurity professionals, system administrators, network engineers, and software developers. Knowledge of OS internals helps in troubleshooting, system hardening, privilege management, and understanding how attacks interact with the operating system.
+
+---
+
+## 🏷️ Tags
+
+`TryHackMe` `Operating Systems` `OS Basics` `Kernel` `Memory Management` `Processes` `File Systems` `Cybersecurity Fundamentals`
+
+---
+
+## 📖 Platform
+
+**Platform:** TryHackMe
+
+**Difficulty:** Easy
+
+**Category:** Fundamentals
+
+---
+
+> 📚 This repository documents my hands-on cybersecurity learning journey through TryHackMe labs. Each lab helps strengthen my understanding of computer systems, networking, operating systems, and security fundamentals.
