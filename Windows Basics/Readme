@@ -1,0 +1,126 @@
+# Windows Basics
+
+> Learn the fundamentals of the Microsoft Windows operating system, navigate the graphical interface, manage files, and explore essential administrative and security tools through hands-on labs.
+
+---
+
+## 📌 Lab Information
+
+- **Platform:** TryHackMe
+- **Room:** Windows Basics
+- **Difficulty:** Easy
+- **Category:** Operating Systems
+- **Status:** ✅ Completed
+
+---
+
+## 🎯 Objectives
+
+In this lab, I learned how to:
+
+- Navigate the Windows desktop environment
+- Use the Start Menu and Taskbar efficiently
+- Explore and organize files using File Explorer
+- Understand Windows folder structure and file paths
+- View system information and device specifications
+- Configure Windows Settings
+- Monitor system resources using Task Manager
+- Explore Windows Security and Windows Defender Firewall
+- Perform basic security scans
+- Understand different Windows user account types and permissions
+
+---
+
+## 🛠️ Topics Covered
+
+- Windows Desktop
+- Start Menu
+- Taskbar
+- Search
+- File Explorer
+- Windows Settings
+- Control Panel
+- Task Manager
+- Windows Security
+- Windows Defender Firewall
+- User Accounts
+- File & Folder Management
+- System Information
+- Performance Monitoring
+
+---
+
+## 💻 Practical Activities
+
+- Logged into a Windows Server environment
+- Explored the Windows GUI
+- Viewed system specifications
+- Navigated directories using File Explorer
+- Created and managed files/folders
+- Customized Windows settings
+- Monitored CPU, Memory, and Disk usage
+- Explored Windows Security features
+- Performed a custom antivirus scan
+- Reviewed Firewall settings
+
+---
+
+## 🔑 Key Takeaways
+
+- Windows uses a Graphical User Interface (GUI) to simplify system interaction.
+- File Explorer is the primary tool for navigating and managing files.
+- Task Manager provides real-time performance monitoring.
+- Windows Security helps protect the system against malware and threats.
+- Windows Defender Firewall filters incoming and outgoing network traffic.
+- Understanding the Windows interface is essential before learning advanced Windows administration and cybersecurity concepts.
+
+---
+
+## 🧠 Skills Gained
+
+- Windows Navigation
+- File Management
+- System Administration Basics
+- Security Awareness
+- Performance Monitoring
+- Windows Troubleshooting Fundamentals
+
+---
+
+## 📖 What I Learned
+
+This lab strengthened my understanding of the Windows operating system by introducing its core components, built-in utilities, and security features. It provided hands-on experience with managing files, checking system information, monitoring system resources, and understanding how Windows protects devices using built-in security tools. These concepts form the foundation for Windows administration, IT support, and cybersecurity.
+
+---
+
+## 🚀 Next Steps
+
+- Windows CLI Basics
+- Windows Fundamentals
+- Active Directory Basics
+- Windows Privilege Escalation
+- PowerShell Basics
+
+---
+
+## 📚 Resources
+
+- Microsoft Windows Interface
+- File Explorer
+- Windows Security
+- Task Manager
+- Windows Defender Firewall
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational purposes only. All labs were completed in the authorized TryHackMe learning environment.
+
+---
+
+## 👨‍💻 Author
+
+**Surendra Sangare**
+
+Building practical cybersecurity skills one lab at a time 🚀
