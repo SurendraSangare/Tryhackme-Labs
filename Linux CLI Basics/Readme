@@ -1,0 +1,76 @@
+# Linux CLI Basics
+
+## Overview
+
+This lab introduces the fundamentals of the Linux Command Line Interface (CLI), covering essential commands used for navigating the file system, managing files and directories, viewing file contents, handling permissions, and working efficiently in a Linux environment.
+
+## Objectives
+
+* Understand the Linux directory structure
+* Navigate the filesystem using terminal commands
+* Create, copy, move, rename, and delete files/directories
+* View and edit file contents
+* Search for files and text
+* Understand file permissions and ownership
+* Use command-line help and documentation
+
+## Skills Practiced
+
+* Linux Terminal
+* File & Directory Management
+* Command-Line Navigation
+* File Permissions
+* Text Processing
+* Basic System Administration
+* CLI Productivity
+
+## Commands Covered
+
+```bash
+pwd
+ls
+cd
+mkdir
+rmdir
+touch
+cp
+mv
+rm
+cat
+less
+head
+tail
+find
+grep
+chmod
+chown
+man
+history
+clear
+echo
+```
+
+## Key Learning Outcomes
+
+* Confidently navigate Linux using the terminal.
+* Perform common file and directory operations.
+* Read, search, and manage files efficiently.
+* Understand Linux file permissions.
+* Use built-in documentation to learn new commands.
+
+## Why This Lab Matters
+
+Linux powers the majority of servers, cloud platforms, and cybersecurity environments. Strong command-line skills are essential for system administrators, DevOps engineers, penetration testers, SOC analysts, and security researchers.
+
+## Tools Used
+
+* Linux Terminal (Bash)
+* TryHackMe Lab Environment
+
+## Platform
+
+* **TryHackMe**
+
+## Status
+
+✅ Completed
