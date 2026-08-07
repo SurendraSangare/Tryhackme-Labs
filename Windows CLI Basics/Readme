@@ -1,0 +1,77 @@
+# Windows CLI Basics – TryHackMe
+
+## 📌 Overview
+This repository contains my notes and hands-on exercises from the **Windows CLI Basics** room on TryHackMe. The lab introduces the Windows Command Prompt (CMD) and covers essential command-line operations used for file management, system administration, and basic system enumeration. It provides a strong foundation for anyone beginning Windows administration or cybersecurity.
+
+---
+
+## 🎯 Objectives
+- Learn the basics of the Windows Command Prompt (CMD)
+- Navigate the Windows file system using CLI
+- Manage files and directories
+- Gather system and network information
+- Understand commonly used Windows command-line utilities
+
+---
+
+## 🛠️ Skills Learned
+- Windows Command Prompt (CMD)
+- File and directory navigation
+- File management
+- System enumeration
+- Network information gathering
+- Basic Windows administration
+
+---
+
+## 📚 Commands Practiced
+
+| Command | Description |
+|---------|-------------|
+| `dir` | List files and directories |
+| `cd` | Change the current directory |
+| `cd..` | Move to the parent directory |
+| `tree` | Display the folder structure |
+| `mkdir` | Create a new directory |
+| `rmdir` | Remove a directory |
+| `copy` | Copy files |
+| `move` | Move files or folders |
+| `del` | Delete files |
+| `rename` | Rename files or directories |
+| `type` | Display the contents of a text file |
+| `more` | View file contents one page at a time |
+| `find` | Search for text within files |
+| `where` | Locate executable files |
+| `hostname` | Display the computer name |
+| `whoami` | Show the current logged-in user |
+| `systeminfo` | Display detailed system information |
+| `ipconfig` | View network configuration |
+| `cls` | Clear the Command Prompt screen |
+| `help` | Display help information for commands |
+
+---
+
+## 🧪 Key Takeaways
+- Navigated the Windows file system entirely through the command line.
+- Practiced creating, moving, copying, renaming, and deleting files and folders.
+- Retrieved system and network information using built-in Windows commands.
+- Learned essential CMD commands commonly used in IT support and cybersecurity.
+- Improved confidence working with Windows without relying on the graphical interface.
+
+---
+
+## 🚀 Tools Used
+- Windows Command Prompt (CMD)
+- Windows Operating System
+- TryHackMe AttackBox
+
+---
+
+## 🏆 Outcome
+Successfully completed the **Windows CLI Basics** room on TryHackMe and gained practical experience with Windows command-line operations, file management, system enumeration, and basic administration skills.
+
+---
+
+## 🔗 Platform
+- **Platform:** TryHackMe
+- **Room:** Windows CLI Basics
