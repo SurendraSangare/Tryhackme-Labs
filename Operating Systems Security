@@ -1,0 +1,62 @@
+# 🛡️ Operating System Security
+
+## 📌 Overview
+
+This module focuses on understanding operating system security, common vulnerabilities, and techniques used to protect systems from unauthorized access and malicious activities.
+
+As part of my cybersecurity learning journey on TryHackMe, I explored the fundamentals of securing operating systems and understanding how attackers exploit weaknesses in system configurations.
+
+## 🎯 Topics Covered
+
+* Operating System Security Fundamentals
+* User Accounts and Authentication
+* File Permissions and Access Control
+* System Hardening
+* Common Operating System Vulnerabilities
+* Security Updates and Patch Management
+* Privilege Escalation Concepts
+* Defensive Security Practices
+
+## 🔍 Key Learning Outcomes
+
+* Understood the importance of operating system security in cybersecurity.
+* Learned how access permissions help protect sensitive files and resources.
+* Gained awareness of common operating system security weaknesses.
+* Understood the role of system hardening in reducing attack surfaces.
+* Explored the importance of secure configurations and regular patching.
+* Developed foundational knowledge useful for penetration testing and defensive security.
+
+## 🧠 Skills Gained
+
+| Skill                   | Description                                           |
+| ----------------------- | ----------------------------------------------------- |
+| OS Security             | Understanding operating system protection mechanisms  |
+| Access Control          | Managing permissions and user privileges              |
+| System Hardening        | Reducing security risks through secure configurations |
+| Vulnerability Awareness | Identifying common OS security weaknesses             |
+| Defensive Security      | Understanding methods to protect systems              |
+
+## 💡 Key Takeaways
+
+Operating system security is a fundamental component of cybersecurity. Proper access control, system hardening, regular updates, and secure configurations play an important role in protecting systems against potential threats.
+
+This module strengthened my understanding of how operating systems can be secured and assessed from both offensive and defensive security perspectives.
+
+## 📚 Platform
+
+* [TryHackMe](https://tryhackme.com/)
+* Category: Operating System Security
+
+---
+
+### 👨‍💻 Author
+
+**Surendra Sangare**
+
+Cybersecurity Enthusiast | Continuous Learner
+
+> Challenging every day. Learning every day. Growing every day.
+
+---
+
+⚠️ **Disclaimer:** This repository documents my personal cybersecurity learning journey. All practical activities are performed in authorized lab environments for educational purposes.
