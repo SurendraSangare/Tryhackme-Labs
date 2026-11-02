@@ -1,0 +1,62 @@
+```markdown
+# 🔢 Data Representation
+
+## 📌 Overview
+
+This module focuses on understanding how computers process, store, and interpret information at a low level, bridging the gap between raw machine data and human-readable formats.
+
+As part of my cybersecurity learning journey on TryHackMe, I explored fundamental data encodings, numeral systems, and the crucial distinction between encoding and encryption used across binary analysis, web exploitation, and cryptography.
+
+## 🎯 Topics Covered
+
+- Number Systems: Binary (Base 2), Decimal (Base 10), and Hexadecimal (Base 16)
+- Conversions between Decimal, Binary, and Hexadecimal
+- Bits, Bytes, and Nibbles Architecture
+- Character Encoding Standards: ASCII and Unicode (UTF-8, UTF-16)
+- Common Data Encoding Schemes: Base32, Base64, and URL Encoding
+- Data Encoding vs. Data Encryption vs. Hashing
+- Bitwise Operations and Endianness Basics
+- Identifying Encoded Data during CTFs and Security Assessments
+
+## 🔍 Key Learning Outcomes
+
+- Understood how raw machine binary translates into human-readable characters and instructions.
+- Mastered manual and automated conversions across binary, decimal, and hexadecimal numeral systems.
+- Learned to recognize common encoding formats such as Base64 padding and URL percent-encoding.
+- Understood why encoding is not a security measure and how reversible formats differ from encryption.
+- Explored practical terminal tools to decode, analyze, and inspect raw byte streams.
+- Developed foundational low-level knowledge essential for cryptography, reverse engineering, and network packet analysis.
+
+## 🧠 Skills Gained
+
+| Skill | Description |
+| --- | --- |
+| Number Systems | Converting and working with binary, decimal, and hexadecimal |
+| Data Encoding | Identifying and decoding schemes like Base64, ASCII, and URL encoding |
+| Cryptographic Awareness | Distinguishing between encoding, hashing, and encryption mechanisms |
+| Binary Inspection | Analyzing raw byte values and character mapping representations |
+| CLI Data Manipulation | Utilizing Linux command-line utilities for quick format translation |
+
+## 💡 Key Takeaways
+
+Data representation forms the bedrock of all computing and cybersecurity operations. Recognizing how data changes format across storage, memory, and network transmission enables security analysts to uncover obfuscated payloads, inspect network streams, and reverse-engineer compiled applications.
+
+This module strengthened my understanding of low-level data structures and prepared me to approach cryptography and reverse engineering challenges with greater confidence.
+
+## 📚 Platform
+
+- [TryHackMe](https://tryhackme.com/)
+- Room: Data Representation
+- Category: Cryptography / Fundamentals
+
+---
+
+### 👨‍💻 Author
+
+**Surendra Sangare**
+
+Cybersecurity Enthusiast | Continuous Learner
+
+> Challenging every day. Learning every day. Growing every day.
+
+```
