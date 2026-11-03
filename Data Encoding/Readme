@@ -1,0 +1,50 @@
+# TryHackMe – Data Encoding
+
+## 📌 Lab Overview
+This repository documents my hands-on learning and practical experience with data encoding techniques through the TryHackMe platform.
+
+The lab focuses on understanding how data is represented, encoded, and decoded using different encoding methods commonly encountered in cybersecurity and penetration testing.
+
+## 🎯 Objectives
+- Understand the fundamentals of data encoding.
+- Identify different encoding formats.
+- Practice encoding and decoding data.
+- Recognize encoded strings during security investigations.
+- Develop practical skills in analyzing encoded information.
+
+## 🛠️ Topics Covered
+- Base64 Encoding
+- Hexadecimal Encoding
+- Binary Representation
+- ASCII Encoding
+- URL Encoding
+- Data Decoding Techniques
+
+## 🔬 Practical Learning
+During this lab, I explored different encoding methods and practiced identifying and decoding encoded data.
+
+**Key Takeaways:**
+- Encoding transforms data into a different representation.
+- Encoding is not the same as encryption or hashing.
+- Encoded information can often be decoded without a secret key.
+- Understanding encoding is useful when analyzing suspicious strings, web traffic, and captured data.
+
+## 📸 Lab Screenshots
+Screenshots of completed tasks and practical exercises are included in this repository as evidence of hands-on learning.
+
+## 💡 Skills Gained
+- Cybersecurity Fundamentals
+- Data Encoding and Decoding
+- String Analysis
+- Basic Digital Forensics
+- Security Investigation
+
+## 🏴‍☠️ Platform
+[TryHackMe](https://tryhackme.com/)
+
+## 📚 Learning Progress
+This lab is part of my ongoing cybersecurity learning journey, where I am developing practical skills through hands-on exercises and security challenges.
+
+---
+
+**Disclaimer:** This repository is intended for educational purposes and documents my personal learning experience.
