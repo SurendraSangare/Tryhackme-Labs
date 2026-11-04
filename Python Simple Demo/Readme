@@ -1,0 +1,81 @@
+# TryHackMe – Python Simple Demo
+
+## 📌 Overview
+This repository contains my practical work from the Python Simple Demo lab on TryHackMe. The objective of this lab is to understand the fundamentals of Python programming and explore how Python can be used for basic scripting and automation.
+
+As part of my cybersecurity learning journey, I am practising Python basics to build a foundation for security-related scripting and problem-solving.
+
+## 🎯 Objectives
+- Understand basic Python syntax and structure.
+- Learn how to use variables and data types.
+- Work with print statements and user input.
+- Understand basic operators and expressions.
+- Practise simple Python scripts.
+- Develop familiarity with Python for cybersecurity applications.
+
+## 🛠️ Tools & Technologies
+- **Platform:** TryHackMe
+- **Programming Language:** Python 3
+- **Environment:** TryHackMe AttackBox / Local Python Environment
+
+## 💻 Practical Implementation
+
+During this lab, I practised basic Python operations, including displaying output, storing values in variables, accepting user input, and performing simple calculations.
+
+### Example 1: Hello World
+```python
+print("Hello, World!")
+```
+
+### Example 2: Variables
+```python
+name = "Surendra"
+age = 29
+
+print("Name:", name)
+print("Age:", age)
+```
+
+### Example 3: User Input
+```python
+name = input("Enter your name: ")
+print("Welcome", name)
+```
+
+### Example 4: Simple Calculation
+```python
+num1 = 10
+num2 = 20
+
+result = num1 + num2
+
+print("Result:", result)
+```
+
+## 📚 Key Learnings
+- Understanding Python fundamentals.
+- Writing and executing basic Python scripts.
+- Working with variables, input, and output.
+- Understanding how programming supports automation.
+- Building a foundation for future cybersecurity scripting.
+
+## 🔐 Cybersecurity Relevance
+Python is widely used in cybersecurity for:
+- Automating repetitive security tasks.
+- Network scanning and analysis.
+- Log analysis.
+- File handling and processing.
+- Developing basic security tools and scripts.
+
+## 📸 Lab Screenshots
+Screenshots demonstrating the practical exercises and lab completion are included in this repository.
+
+## 🚀 Learning Journey
+This lab is part of my ongoing TryHackMe cybersecurity learning journey. I am consistently practising hands-on exercises to strengthen my technical knowledge and develop practical skills in cybersecurity.
+
+**Platform:** TryHackMe  
+**Topic:** Python Fundamentals  
+**Status:** Completed / Practising
+
+---
+*Learning by doing. Building cybersecurity skills one lab at a time.*
