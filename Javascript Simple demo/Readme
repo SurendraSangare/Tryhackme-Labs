@@ -1,0 +1,40 @@
+# JavaScript Basics – TryHackMe Lab
+
+## 📌 Overview
+This repository contains my practical learning and hands-on exercises from the JavaScript Basics room on TryHackMe.
+
+The lab introduces fundamental JavaScript concepts and demonstrates how JavaScript is used in web development and basic scripting.
+
+## 🎯 Objectives
+- Understand JavaScript fundamentals.
+- Learn variables and data types.
+- Explore operators and expressions.
+- Understand conditional statements.
+- Practice functions and basic scripting.
+- Learn how JavaScript interacts with web pages.
+
+## 🛠️ Topics Covered
+- JavaScript Introduction
+- Variables (`var`, `let`, `const`)
+- Data Types
+- Operators
+- Conditional Statements (`if/else`)
+- Loops
+- Functions
+- Console Output (`console.log()`)
+
+## 💻 Practical Exercises
+Performed basic JavaScript exercises to understand syntax, execute scripts, work with variables, and practice logical operations.
+
+## 📸 Lab Screenshots
+Screenshots of completed tasks and practical exercises are included in this repository.
+
+## 📚 Learning Outcome
+Gained a basic understanding of JavaScript syntax, programming logic, and scripting fundamentals through hands-on practice.
+
+## 🔗 Platform
+[TryHackMe](https://tryhackme.com/)
+
+---
+
+**Disclaimer:** This repository is created for educational purposes and documents my personal cybersecurity learning journey.
