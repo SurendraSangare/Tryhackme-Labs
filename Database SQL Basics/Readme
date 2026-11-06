@@ -1,0 +1,53 @@
+# Database SQL Basics – TryHackMe Lab
+
+## 📌 Overview
+This repository documents my hands-on learning and practical exercises from the Database SQL Basics room on TryHackMe.
+
+The lab focuses on understanding relational databases, SQL syntax, and performing basic database operations through practical exercises.
+
+## 🎯 Learning Objectives
+- Understand database fundamentals.
+- Learn the basics of SQL (Structured Query Language).
+- Explore relational database structures.
+- Understand tables, rows, and columns.
+- Execute basic SQL queries.
+- Retrieve and filter information from databases.
+
+## 🛠️ Topics Covered
+
+- Introduction to Databases
+- Relational Database Management Systems (RDBMS)
+- SQL Syntax and Commands
+- SELECT Statements
+- WHERE Clause
+- INSERT Statements
+- UPDATE Statements
+- DELETE Statements
+- ORDER BY Clause
+- Basic Database Queries
+
+## 💻 Practical Exercises
+
+Performed hands-on SQL exercises to:
+- Retrieve records from database tables.
+- Filter data using conditions.
+- Sort query results.
+- Insert new records.
+- Modify existing records.
+- Understand basic database manipulation.
+
+## 📸 Lab Screenshots
+
+This repository includes screenshots of completed tasks and practical exercises to document my learning progress.
+
+## 📚 Key Takeaways
+
+Developed a foundational understanding of SQL queries, relational database concepts, and database operations. These skills are useful for cybersecurity, database management, and understanding how web applications interact with databases.
+
+## 🔗 Learning Platform
+
+[TryHackMe](https://tryhackme.com/)
+
+---
+
+**Disclaimer:** This repository is intended for educational purposes and documents my personal hands-on cybersecurity learning journey.
