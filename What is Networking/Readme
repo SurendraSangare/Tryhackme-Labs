@@ -1,0 +1,59 @@
+# 🌐 TryHackMe – What is Networking?
+
+## 📌 Overview
+This room introduces the fundamentals of computer networking and explains how devices communicate with each other over private networks and the Internet.
+
+It covers essential networking concepts that form the foundation of cybersecurity, ethical hacking, and network troubleshooting.
+
+## 🎯 What I Learned
+
+- **Networking Basics:** Understanding what a computer network is and how connected devices communicate.
+- **The Internet:** Difference between private and public networks.
+- **IP Addresses:** Understanding IPv4, IPv6, public IPs, and private IPs.
+- **MAC Addresses:** Learning how devices are physically identified on a network.
+- **MAC Spoofing:** Understanding how a MAC address can be changed or impersonated.
+- **Ping (ICMP):** Using the ping command to test network connectivity.
+
+## 🛠️ Commands Practised
+
+**1. Ping a device**
+```bash
+ping 10.10.10.10
+```
+
+**2. Ping Google's public DNS**
+```bash
+ping 8.8.8.8
+```
+
+## 📚 Key Concepts
+
+| Concept | Description |
+|---|---|
+| Network | Two or more connected devices |
+| Internet | A global network of interconnected networks |
+| IP Address | Identifies a device on a network |
+| IPv4 | 32-bit addressing system |
+| IPv6 | 128-bit addressing system |
+| MAC Address | Hardware address of a network interface |
+| ICMP | Protocol used by ping |
+| Octet | One section of an IPv4 address |
+
+## 🔐 Hands-on Activities
+
+- Explored how devices communicate over a network.
+- Identified the differences between public and private IP addresses.
+- Experimented with MAC address spoofing in an interactive lab.
+- Used ping to test connectivity with another device.
+
+## 💡 Key Takeaway
+
+Networking is one of the most important foundations of cybersecurity. Understanding IP addresses, MAC addresses, and communication protocols helps build the knowledge required for network security, penetration testing, and troubleshooting.
+
+## 🏁 Learning Platform
+[TryHackMe – What is Networking?](https://tryhackme.com/room/whatisnetworking)
+
+**Status:** Completed ✅
+
+---
+*Learning every day. Building my cybersecurity knowledge one lab at a time. 🚀*
