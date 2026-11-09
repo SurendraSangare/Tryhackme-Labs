@@ -1,0 +1,90 @@
+# 🌐 TryHackMe – Intro to LAN
+
+## 📌 Overview
+This room explores the technologies and network designs used in Local Area Networks (LANs). It introduces network topologies, subnetting, ARP, and DHCP, which are essential concepts for understanding how devices communicate within private networks.
+
+## 🎯 What I Learned
+
+- **LAN Topologies:** Understanding different network designs and their advantages and disadvantages.
+- **Switches and Routers:** Learning how switches connect devices within a network and how routers forward data between networks.
+- **Subnetting:** Understanding how a large network can be divided into smaller networks.
+- **Subnet Masks:** Learning how subnet masks identify network and host portions of an IP address.
+- **ARP Protocol:** Understanding how IP addresses are mapped to MAC addresses.
+- **DHCP Protocol:** Learning how devices automatically obtain IP configuration from a DHCP server.
+
+## 📚 Key Concepts
+
+### 1. LAN Topologies
+
+| Topology | Description |
+|---|---|
+| Star | Devices connect through a central switch or hub |
+| Bus | Devices share a common communication cable |
+| Ring | Devices are connected in a circular arrangement |
+| Mesh | Devices have multiple interconnected paths |
+
+**Networking Devices:**
+- Switch – Connects multiple devices within a LAN.
+- Router – Connects different networks and performs routing.
+
+### 2. Subnetting
+
+Subnetting is the process of dividing a larger network into smaller logical networks.
+
+Important terms:
+- **Subnet Mask:** Identifies the network and host portions of an IP address.
+- **Network Address:** Identifies a particular network.
+- **Host Address:** Identifies an individual device within a network.
+- **Default Gateway:** Allows devices to communicate with other networks.
+
+### 3. ARP (Address Resolution Protocol)
+
+ARP is used to discover the MAC address associated with an IPv4 address on a local network.
+
+**ARP Process:**
+1. ARP Request – Broadcasts a request asking which device owns an IP address.
+2. ARP Reply – The matching device responds with its MAC address.
+3. ARP Cache – Stores discovered IP-to-MAC address mappings.
+
+### 4. DHCP (Dynamic Host Configuration Protocol)
+
+DHCP automatically assigns IP configuration to devices joining a network.
+
+**DHCP DORA Process:**
+
+| Step | Packet | Purpose |
+|---|---|---|
+| 1 | Discover | Client searches for a DHCP server |
+| 2 | Offer | Server offers an IP address |
+| 3 | Request | Client requests the offered IP |
+| 4 | Acknowledge | Server confirms the assignment |
+
+## 🛠️ Practical Learning
+
+- Explored different LAN topologies through an interactive lab.
+- Learned how subnetting divides networks.
+- Studied IP-to-MAC address resolution using ARP.
+- Understood automatic IP assignment using DHCP.
+- Explored the role of switches and routers in network communication.
+
+## 🔐 Security Takeaways
+
+Understanding LAN fundamentals helps build knowledge of:
+- ARP Spoofing and ARP Poisoning.
+- Rogue DHCP servers.
+- Network segmentation.
+- Man-in-the-Middle attacks.
+- Internal network security.
+
+## 💡 Key Takeaway
+
+This room strengthened my understanding of local area networking and how devices communicate within private networks. Learning about subnetting, ARP, DHCP, switches, and routers provides a strong foundation for network troubleshooting and cybersecurity.
+
+## 🏁 Learning Platform
+
+[TryHackMe – Intro to LAN](https://tryhackme.com/room/introtolan)
+
+**Status:** Completed ✅
+
+---
+*Learning every day. Building my cybersecurity knowledge one lab at a time. 🚀🔐*
