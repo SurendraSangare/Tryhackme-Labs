@@ -1,0 +1,113 @@
+# 🌐 TryHackMe – OSI Model
+
+## 📌 Overview
+
+The OSI (Open Systems Interconnection) Model is a conceptual framework that explains how data is transmitted and received across computer networks.
+
+It consists of seven layers, with each layer performing a specific function to enable communication between networked devices.
+
+## 🎯 What I Learned
+
+- Understanding the seven layers of the OSI Model.
+- Learning how data travels across networks.
+- Understanding encapsulation and decapsulation.
+- Identifying network protocols and their corresponding layers.
+- Understanding the roles of TCP, UDP, IP, and MAC addresses.
+- Learning how different network devices operate at different layers.
+
+## 🧠 The Seven Layers of the OSI Model
+
+| Layer | Name | Main Function | Examples |
+|---|---|---|---|
+| 7 | Application | Provides network services to applications | HTTP, FTP, DNS, SMTP |
+| 6 | Presentation | Data formatting, encryption and compression | SSL/TLS, JPEG, ASCII |
+| 5 | Session | Establishes and manages communication sessions | RPC, NetBIOS |
+| 4 | Transport | End-to-end communication and data delivery | TCP, UDP |
+| 3 | Network | Logical addressing and routing | IP, ICMP, OSPF |
+| 2 | Data Link | MAC addressing and frame delivery | Ethernet, Wi-Fi |
+| 1 | Physical | Transmits raw binary data through physical media | Cables, radio signals |
+
+## 🔍 Layer-by-Layer Explanation
+
+### Layer 1 – Physical
+- Transmits raw bits (0s and 1s).
+- Deals with cables, connectors, electrical signals and wireless signals.
+- Responsible for physical connectivity.
+
+### Layer 2 – Data Link
+- Handles communication between devices on the same network segment.
+- Uses MAC addresses.
+- Responsible for framing and error detection.
+- Network Interface Cards (NICs) operate at this layer.
+
+### Layer 3 – Network
+- Handles logical addressing and routing.
+- Uses IP addresses to identify devices across networks.
+- Determines the path packets take to reach their destination.
+- Routers primarily operate at this layer.
+
+### Layer 4 – Transport
+- Provides end-to-end communication.
+- Divides data into smaller units.
+- Uses TCP and UDP.
+
+**TCP:**
+- Connection-oriented.
+- Reliable data delivery.
+- Uses a three-way handshake.
+
+**UDP:**
+- Connectionless.
+- Faster with lower overhead.
+- Does not guarantee delivery.
+
+### Layer 5 – Session
+- Establishes and manages communication sessions.
+- Maintains and terminates connections.
+- Helps synchronize communication.
+
+### Layer 6 – Presentation
+- Handles data translation and formatting.
+- Supports encryption and decryption.
+- Performs data compression.
+
+### Layer 7 – Application
+- Closest layer to the end user.
+- Provides network services to applications.
+- Supports protocols such as HTTP, HTTPS, FTP, DNS and SMTP.
+
+## 📦 Encapsulation
+
+Encapsulation is the process of adding protocol-related information to data as it moves down the OSI layers before transmission.
+
+| OSI Layer | Data Unit |
+|---|---|
+| Layer 7–5 | Data |
+| Layer 4 | Segment (TCP) / Datagram (UDP) |
+| Layer 3 | Packet |
+| Layer 2 | Frame |
+| Layer 1 | Bits |
+
+**Decapsulation** is the reverse process, where the receiving device removes the additional information as data moves up the layers.
+
+## 🔐 Practical Learning
+
+- Explored the responsibilities of all seven OSI layers.
+- Identified protocols associated with different layers.
+- Studied TCP and UDP communication.
+- Understood how data is encapsulated into segments, packets, frames and bits.
+- Practised identifying OSI layers through the interactive OSI game.
+
+## 💡 Key Takeaway
+
+The OSI Model provides a structured way to understand network communication and troubleshoot connectivity issues. Understanding these seven layers is essential for networking, cybersecurity, penetration testing and network administration.
+
+## 🏁 Learning Platform
+
+[TryHackMe – OSI Model](https://tryhackme.com/room/osimodelzi)
+
+**Status:** Completed ✅
+
+---
+
+*Learning every day. Building my cybersecurity knowledge one layer at a time. 🚀🔐*
