@@ -1,0 +1,39 @@
+# 📦 TryHackMe – Packets & Frames
+
+## 📌 Overview
+This room explores how data is transmitted across computer networks using packets and frames. It introduces the fundamentals of network communication and explains how data travels between devices.
+
+## 🎯 What I Learned
+
+- **Packets:** Understanding how data is divided into smaller units for transmission across networks.
+- **Frames:** Learning how packets are encapsulated into frames at the Data Link Layer.
+- **OSI Model:** Understanding the role of network layers in data communication.
+- **TCP/IP:** Exploring how devices communicate using the TCP/IP protocol suite.
+- **Encapsulation:** Understanding how data gets wrapped with headers and other information at different network layers.
+- **Network Communication:** Learning how devices send and receive data across a network.
+
+## 🔍 Key Concepts
+
+| Concept | Description |
+|---|---|
+| Packet | A unit of data at the Network Layer |
+| Frame | A unit of data at the Data Link Layer |
+| IP Address | Identifies a device on a network |
+| MAC Address | Identifies a network interface |
+| Encapsulation | Wrapping data with protocol information |
+| Decapsulation | Removing protocol information at the receiving end |
+
+## 🛠️ Skills Practiced
+- Networking Fundamentals
+- OSI Model
+- TCP/IP Protocol Suite
+- Data Encapsulation
+- Packet and Frame Analysis
+- Network Communication
+
+## 📚 Learning Platform
+[TryHackMe – Packets & Frames](https://tryhackme.com/room/packetsframes)
+
+---
+
+**Hands-on cybersecurity learning – Challenging Every Day! 🚀**
