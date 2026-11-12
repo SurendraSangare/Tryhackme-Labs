@@ -1,0 +1,43 @@
+# 🌐 TryHackMe – Extending Your Network
+
+## 📌 Overview
+This room explores how computer networks can be expanded to connect multiple devices and networks. It covers networking concepts, devices, and technologies that help extend network connectivity beyond a single local network.
+
+## 🎯 What I Learned
+
+- **Network Devices:** Understanding the roles of routers, switches, and access points.
+- **Routing:** Learning how data travels between different networks.
+- **Subnetting:** Understanding how networks can be divided into smaller subnets.
+- **VLANs:** Learning how Virtual LANs segment networks logically.
+- **Wireless Networking:** Exploring how wireless devices connect to existing networks.
+- **Network Expansion:** Understanding how multiple networks can communicate and share resources.
+
+## 🔍 Key Concepts
+
+| Concept | Description |
+|---|---|
+| Router | Connects different networks |
+| Switch | Connects devices within a LAN |
+| Access Point | Provides wireless network connectivity |
+| VLAN | Creates logical network segments |
+| Subnetting | Divides a network into smaller networks |
+| Routing | Forwards packets between networks |
+| LAN | Local Area Network |
+| WAN | Wide Area Network |
+
+## 🛠️ Skills Practiced
+- Networking Fundamentals
+- Network Architecture
+- Routing and Switching
+- Subnetting
+- VLAN Configuration Concepts
+- Wireless Networking
+- Network Segmentation
+- Network Troubleshooting
+
+## 📚 Learning Platform
+[TryHackMe – Extending Your Network](https://tryhackme.com/room/extendingyournetwork)
+
+---
+
+**Hands-on cybersecurity learning – Challenging Every Day! 🚀**
