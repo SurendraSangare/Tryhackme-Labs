@@ -1,0 +1,469 @@
+# 🌐 Domain Name System (DNS) – Complete Guide
+
+## 📌 Introduction
+
+The **Domain Name System (DNS)** is one of the most important components of computer networking. It translates human-readable domain names into machine-readable IP addresses.
+
+Computers communicate with each other using IP addresses, but remembering numerical addresses for every website would be difficult. DNS solves this problem by allowing users to access websites using simple domain names.
+
+**Example:**
+
+When you enter:
+
+```text
+www.google.com
+```
+
+Your computer uses DNS to find the corresponding IP address, such as:
+
+```text
+142.250.x.x
+```
+
+The IP address allows your device to communicate with the destination server.
+
+---
+
+## 🎯 Why Do We Need DNS?
+
+DNS is required because:
+
+- Humans find domain names easier to remember than IP addresses.
+- It translates domain names into IP addresses.
+- It helps applications locate servers and network services.
+- It supports load distribution through multiple DNS records.
+- It allows services to change IP addresses without changing their domain names.
+
+---
+
+## ⚙️ How DNS Works
+
+DNS resolution generally follows these steps:
+
+1. **User Request:** A user enters a domain name in a browser.
+2. **Browser Cache:** The browser checks whether the DNS record is already cached.
+3. **Operating System Cache:** The operating system checks its local DNS cache.
+4. **DNS Resolver:** If no cached result is available, the request goes to a recursive DNS resolver.
+5. **Root DNS Server:** The resolver contacts a root server to identify the appropriate Top-Level Domain (TLD) server.
+6. **TLD DNS Server:** The TLD server provides information about the domain's authoritative name server.
+7. **Authoritative DNS Server:** The authoritative server provides the requested DNS record.
+8. **IP Address Returned:** The resolver sends the IP address back to the client.
+9. **Connection Established:** The browser connects to the destination server using the returned IP address.
+
+### DNS Resolution Flow
+
+```text
+        User enters www.example.com
+                    |
+                    v
+             Browser Cache
+                    |
+                    v
+              OS DNS Cache
+                    |
+                    v
+           Recursive DNS Resolver
+                    |
+                    v
+              Root DNS Server
+                    |
+                    v
+               TLD Server
+                    |
+                    v
+          Authoritative DNS Server
+                    |
+                    v
+             IP Address Returned
+                    |
+                    v
+           Browser Connects to Server
+```
+
+---
+
+## 🧩 Types of DNS Servers
+
+### 1. Recursive DNS Resolver
+
+- Receives DNS queries from client devices.
+- Finds the requested DNS information on behalf of the client.
+- Contacts other DNS servers when necessary.
+- Caches DNS responses to improve performance.
+
+Examples:
+- Google Public DNS: `8.8.8.8`
+- Cloudflare DNS: `1.1.1.1`
+- Quad9 DNS: `9.9.9.9`
+
+### 2. Root DNS Server
+
+- Located at the top of the DNS hierarchy.
+- Directs resolvers to the appropriate TLD name servers.
+- Does not normally provide the final IP address of a website.
+
+### 3. TLD (Top-Level Domain) DNS Server
+
+Handles domain extensions such as:
+
+- `.com`
+- `.org`
+- `.net`
+- `.in`
+- `.edu`
+
+It directs resolvers to the authoritative name servers responsible for a domain.
+
+### 4. Authoritative DNS Server
+
+- Stores the official DNS records for a domain.
+- Provides the actual requested DNS information.
+- Does not need to query other DNS servers to answer for the zones it serves.
+
+---
+
+## 📚 Types of DNS Records
+
+DNS records contain information that helps identify where a domain or service is located.
+
+| Record | Description | Example |
+|---|---|---|
+| A | Maps a domain to an IPv4 address | `example.com → 192.0.2.1` |
+| AAAA | Maps a domain to an IPv6 address | `example.com → 2001:db8::1` |
+| CNAME | Creates an alias for another domain name | `www → example.com` |
+| MX | Specifies mail servers for a domain | `mail.example.com` |
+| NS | Identifies authoritative name servers | `ns1.example.com` |
+| TXT | Stores text-based information | SPF verification |
+| PTR | Maps an IP address to a domain name | Reverse DNS |
+| SOA | Contains administrative information about a DNS zone | Primary NS and serial number |
+| SRV | Specifies the host and port for a service | `_sip._tcp.example.com` |
+| CAA | Specifies which certificate authorities can issue certificates for a domain | `0 issue "letsencrypt.org"` |
+
+---
+
+## ⏱️ What is TTL in DNS?
+
+**TTL (Time To Live)** determines how long a DNS record can remain cached before it needs to be refreshed.
+
+Example:
+
+```text
+example.com
+TTL: 3600 seconds
+```
+
+This means DNS resolvers can cache the record for 1 hour.
+
+Benefits:
+- Reduces repeated DNS queries.
+- Improves DNS resolution speed.
+- Reduces load on DNS servers.
+
+A lower TTL allows DNS changes to be picked up sooner, while a higher TTL can reduce DNS query traffic.
+
+---
+
+## 🔄 Recursive vs Iterative DNS Queries
+
+### Recursive Query
+
+In a recursive query, the client expects the DNS resolver to return the final answer or an error.
+
+Example:
+
+```text
+Client → Recursive Resolver → Final IP Address
+```
+
+### Iterative Query
+
+In an iterative query, a DNS server returns the best information it has, often a referral to another DNS server.
+
+Example:
+
+```text
+Resolver → Root Server
+Resolver ← TLD Referral
+
+Resolver → TLD Server
+Resolver ← Authoritative Server Referral
+
+Resolver → Authoritative Server
+Resolver ← Final DNS Record
+```
+
+---
+
+## 🔌 DNS Port Numbers and Protocols
+
+DNS primarily uses:
+
+| Protocol | Port | Purpose |
+|---|---|---|
+| UDP | 53 | Standard DNS queries and responses |
+| TCP | 53 | Zone transfers and responses requiring TCP |
+| HTTPS | 443 | DNS over HTTPS (DoH) |
+| TLS | 853 | DNS over TLS (DoT) |
+
+**Note:** DNS normally uses UDP port 53 because it is lightweight and fast. TCP port 53 is also important, particularly for zone transfers and truncated responses.
+
+---
+
+## 🛠️ Practical DNS Commands
+
+Understanding DNS commands is important for network troubleshooting and cybersecurity.
+
+### 1. nslookup
+
+Used to query DNS servers and retrieve domain information.
+
+```bash
+nslookup google.com
+```
+
+Query using a specific DNS server:
+
+```bash
+nslookup google.com 8.8.8.8
+```
+
+### 2. dig
+
+A powerful DNS troubleshooting utility available on Linux and other systems.
+
+```bash
+dig google.com
+```
+
+Query a specific record:
+
+```bash
+dig google.com A
+dig google.com MX
+dig google.com NS
+dig google.com TXT
+```
+
+Get a short answer:
+
+```bash
+dig google.com +short
+```
+
+Trace the complete DNS resolution path:
+
+```bash
+dig google.com +trace
+```
+
+### 3. host
+
+A simple Linux utility for DNS lookups.
+
+```bash
+host google.com
+```
+
+### 4. ipconfig (Windows)
+
+Display DNS cache:
+
+```cmd
+ipconfig /displaydns
+```
+
+Flush DNS cache:
+
+```cmd
+ipconfig /flushdns
+```
+
+Display IP configuration:
+
+```cmd
+ipconfig /all
+```
+
+---
+
+## 🔐 DNS and Cybersecurity
+
+DNS plays an important role in cybersecurity because attackers can misuse DNS to redirect users, steal information, or communicate with compromised systems.
+
+### 1. DNS Spoofing
+
+An attacker provides false DNS information to redirect users to a malicious IP address.
+
+**Example:** A user enters a legitimate banking website address but gets redirected to a fake website.
+
+### 2. DNS Cache Poisoning
+
+An attacker injects fraudulent DNS records into a resolver's cache.
+
+As a result, users may receive incorrect IP addresses when accessing legitimate domains.
+
+### 3. DNS Tunneling
+
+Attackers use DNS queries and responses to transfer data through DNS traffic.
+
+It can be used for:
+- Data exfiltration.
+- Command-and-control communication.
+- Bypassing certain network restrictions.
+
+### 4. DNS Hijacking
+
+An attacker changes DNS settings or compromises DNS infrastructure to redirect users to malicious destinations.
+
+### 5. DNS Amplification Attack
+
+A type of Distributed Denial of Service (DDoS) attack where attackers exploit DNS servers to generate large volumes of traffic toward a victim.
+
+### 6. DNS Rebinding
+
+An attack technique that manipulates DNS responses to make a victim's browser communicate with unintended internal network resources.
+
+---
+
+## 🛡️ DNS Security Mechanisms
+
+### DNSSEC (DNS Security Extensions)
+
+DNSSEC helps protect DNS responses against tampering by using digital signatures.
+
+It provides:
+- Data integrity.
+- Authentication of DNS data origin.
+- Protection against certain DNS spoofing and cache-poisoning attacks.
+
+**Important:** DNSSEC does not encrypt DNS queries.
+
+### DNS over HTTPS (DoH)
+
+- Encrypts DNS queries using HTTPS.
+- Uses port 443.
+- Helps prevent intermediaries from easily reading DNS requests.
+
+### DNS over TLS (DoT)
+
+- Encrypts DNS queries using TLS.
+- Commonly uses port 853.
+- Protects DNS communication between the client and resolver.
+
+---
+
+## 🔍 DNS Troubleshooting Scenarios
+
+| Problem | Possible Cause | Troubleshooting |
+|---|---|---|
+| Website not opening | DNS resolution failure | Use `nslookup` |
+| Incorrect website IP | Incorrect or outdated DNS record | Use `dig` |
+| DNS server not responding | Network or DNS server issue | Check connectivity |
+| Website opens using IP but not domain | DNS resolution issue | Check DNS settings |
+| Recent DNS changes not reflected | Cached DNS record | Flush DNS cache |
+| Slow website access | DNS resolver latency | Test another resolver |
+
+### Basic Troubleshooting Commands
+
+```cmd
+ipconfig /all
+ipconfig /flushdns
+nslookup example.com
+ping example.com
+tracert example.com
+```
+
+---
+
+## 💡 Important DNS Interview Questions
+
+**1. What is DNS?**
+
+DNS stands for Domain Name System. It translates domain names into IP addresses so computers can communicate with each other.
+
+**2. What is the difference between A and AAAA records?**
+
+A records map domain names to IPv4 addresses, whereas AAAA records map domain names to IPv6 addresses.
+
+**3. What is the default DNS port?**
+
+DNS primarily uses UDP port 53 and also uses TCP port 53.
+
+**4. What is a recursive DNS query?**
+
+A recursive query requires the DNS resolver to find the final answer or return an error to the client.
+
+**5. What is DNS caching?**
+
+DNS caching stores previously resolved DNS information temporarily to reduce lookup time and network traffic.
+
+**6. What is an MX record?**
+
+An MX record specifies which mail servers are responsible for receiving emails for a domain.
+
+**7. What is a CNAME record?**
+
+A CNAME record creates an alias that points one domain name to another domain name.
+
+**8. What happens when DNS fails?**
+
+Users may be unable to access websites or services using domain names, even if network connectivity is available.
+
+**9. What is the difference between DNS and DHCP?**
+
+DNS resolves domain names into IP addresses, whereas DHCP automatically assigns IP configuration to devices on a network.
+
+**10. What is DNSSEC?**
+
+DNSSEC uses digital signatures to authenticate DNS data and protect its integrity.
+
+**11. What is TTL?**
+
+TTL specifies how long a DNS record can remain in a cache before it should be refreshed.
+
+**12. What is reverse DNS lookup?**
+
+Reverse DNS lookup finds a domain name associated with an IP address using PTR records.
+
+---
+
+## 🎯 Key Takeaways
+
+- DNS translates domain names into IP addresses.
+- DNS follows a hierarchical structure.
+- Root, TLD, and authoritative servers play important roles in DNS resolution.
+- UDP port 53 is commonly used for DNS queries.
+- TCP port 53 is used for zone transfers and other DNS responses.
+- A, AAAA, MX, CNAME, NS, and TXT are important DNS records.
+- TTL controls DNS caching duration.
+- DNSSEC helps protect DNS data integrity.
+- DoH and DoT encrypt DNS queries.
+- DNS troubleshooting is an essential networking and cybersecurity skill.
+
+---
+
+## 📖 Learning Resources
+
+- [Cloudflare – What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
+- [Google Public DNS](https://developers.google.com/speed/public-dns)
+- [ICANN – DNS Basics](https://www.icann.org/resources/pages/dns-2012-02-25-en)
+- [TryHackMe](https://tryhackme.com/)
+- [RFC 1035 – Domain Names](https://www.rfc-editor.org/rfc/rfc1035)
+
+---
+
+## 🚀 My Learning Progress
+
+This documentation is part of my ongoing journey to strengthen my networking fundamentals and cybersecurity knowledge.
+
+**Topics covered:**
+- DNS Fundamentals
+- DNS Resolution Process
+- DNS Server Types
+- DNS Records
+- DNS Ports and Protocols
+- DNS Troubleshooting
+- DNS Security
+- Practical Command-Line Exercises
+
+**Learning by doing. Challenging every day!** 💻🔐
