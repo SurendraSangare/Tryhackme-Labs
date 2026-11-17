@@ -1,0 +1,591 @@
+# 🌐 HTTP (Hypertext Transfer Protocol) – TryHackMe
+
+## 1. Introduction to HTTP
+
+**HTTP (Hypertext Transfer Protocol)** is an application-layer protocol used for communication between clients and web servers.
+
+It allows clients (such as web browsers) to request resources from web servers and receive responses.
+
+For example, when we enter `https://example.com` in a browser:
+
+1. The browser identifies the destination server.
+2. It establishes a connection with the server.
+3. It sends an HTTP request.
+4. The server processes the request.
+5. The server returns an HTTP response.
+6. The browser displays the requested webpage.
+
+### Key Components
+
+- **Client:** The device or application making a request.
+- **Server:** The system hosting the website or application.
+- **Request:** A message sent by the client to the server.
+- **Response:** A message returned by the server.
+- **Resource:** Content requested from the server, such as HTML, images, CSS, or JavaScript files.
+
+HTTP is a stateless protocol, meaning each request is treated independently by default. Cookies and session mechanisms help maintain user state.
+
+---
+
+## 2. How HTTP Works
+
+HTTP follows a client-server communication model.
+
+**Communication flow:**
+
+```text
+Client (Browser)
+       |
+       | HTTP Request
+       |
+       v
+   Web Server
+       |
+       | Process Request
+       |
+       v
+   HTTP Response
+       |
+       v
+Client (Browser)
+```
+
+Example:
+
+```http
+GET /index.html HTTP/1.1
+Host: example.com
+```
+
+The server may respond with:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>
+<body>
+<h1>Welcome!</h1>
+</body>
+</html>
+```
+
+---
+
+## 3. HTTP Request Structure
+
+An HTTP request generally consists of the following components:
+
+1. Request Line
+2. Headers
+3. Blank Line
+4. Optional Request Body
+
+### Example
+
+```http
+GET /about.html HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+Connection: keep-alive
+```
+
+### A. Request Line
+
+The request line contains three important elements:
+
+- HTTP Method: GET
+- Request Target: /about.html
+- HTTP Version: HTTP/1.1
+
+### B. HTTP Headers
+
+Headers provide additional information about the request.
+
+Common request headers:
+
+| Header | Purpose |
+|---|---|
+| Host | Specifies the target hostname |
+| User-Agent | Identifies the client application |
+| Accept | Specifies acceptable response formats |
+| Authorization | Carries authentication credentials |
+| Cookie | Sends stored cookies to the server |
+| Content-Type | Specifies the format of the request body |
+| Content-Length | Specifies the request body size |
+
+### C. Request Body
+
+The request body contains data sent to the server, commonly with POST and PUT requests.
+
+Example:
+
+```http
+POST /login HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=password123
+```
+
+---
+
+## 4. HTTP Methods
+
+HTTP methods define the action that a client wants the server to perform.
+
+| Method | Description |
+|---|---|
+| GET | Retrieves information from the server |
+| POST | Submits data to the server |
+| PUT | Creates or replaces a resource |
+| DELETE | Deletes a specified resource |
+| PATCH | Partially modifies a resource |
+| HEAD | Retrieves response headers without the response body |
+| OPTIONS | Identifies supported communication options |
+
+### Examples
+
+**GET Request**
+
+```http
+GET /products HTTP/1.1
+Host: example.com
+```
+
+Used to retrieve product information.
+
+**POST Request**
+
+```http
+POST /login HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{"username":"admin","password":"test123"}
+```
+
+Used to submit information.
+
+**DELETE Request**
+
+```http
+DELETE /users/10 HTTP/1.1
+Host: example.com
+```
+
+Used to request deletion of a resource.
+
+**Important Security Note:** GET requests should not be used to transmit sensitive information in URLs because URLs can appear in browser history, logs, and other places.
+
+---
+
+## 5. HTTP Response Structure
+
+An HTTP response is sent by the server after processing a request.
+
+It generally consists of:
+
+1. Status Line
+2. Response Headers
+3. Blank Line
+4. Response Body
+
+### Example
+
+```http
+HTTP/1.1 200 OK
+Date: Mon, 17 Nov 2026 10:00:00 GMT
+Server: nginx
+Content-Type: text/html
+Content-Length: 45
+
+<html>
+<body>
+<h1>Hello World</h1>
+</body>
+</html>
+```
+
+### A. Status Line
+
+The status line contains:
+
+- HTTP Version: HTTP/1.1
+- Status Code: 200
+- Reason Phrase: OK
+
+### B. Response Headers
+
+| Header | Purpose |
+|---|---|
+| Server | Identifies server software |
+| Content-Type | Defines response content format |
+| Content-Length | Specifies response body size |
+| Set-Cookie | Instructs the browser to store a cookie |
+| Location | Specifies a redirect destination |
+| Cache-Control | Controls caching behaviour |
+| Strict-Transport-Security | Enables HTTPS-only access through HSTS |
+
+### C. Response Body
+
+The response body contains the requested content, such as HTML, JSON, images, or other resources.
+
+---
+
+## 6. HTTP Status Codes
+
+HTTP status codes indicate the result of a client's request.
+
+They are divided into five categories.
+
+### 1xx – Informational
+
+The request has been received and processing is continuing.
+
+- **100 Continue:** The server received the initial request headers.
+- **101 Switching Protocols:** The server is switching protocols.
+
+### 2xx – Success
+
+The request was successfully received and processed.
+
+- **200 OK:** Request completed successfully.
+- **201 Created:** A resource was successfully created.
+- **202 Accepted:** Request accepted for processing.
+- **204 No Content:** Request succeeded, but there is no response body.
+
+### 3xx – Redirection
+
+The client needs to take additional action, usually to access another URL.
+
+- **301 Moved Permanently:** Resource has permanently moved.
+- **302 Found:** Temporary redirection.
+- **304 Not Modified:** Cached resource can be reused.
+
+### 4xx – Client Errors
+
+The request contains an error or cannot be fulfilled.
+
+- **400 Bad Request:** Invalid request.
+- **401 Unauthorized:** Authentication is required or has failed.
+- **403 Forbidden:** Access is denied.
+- **404 Not Found:** Requested resource does not exist.
+- **405 Method Not Allowed:** HTTP method is not supported for the resource.
+- **429 Too Many Requests:** Too many requests were made within a given period.
+
+### 5xx – Server Errors
+
+The server failed to complete a valid request.
+
+- **500 Internal Server Error:** Unexpected server-side error.
+- **501 Not Implemented:** Server does not support the requested functionality.
+- **502 Bad Gateway:** Invalid response from an upstream server.
+- **503 Service Unavailable:** Server is temporarily unavailable.
+- **504 Gateway Timeout:** Upstream server did not respond in time.
+
+---
+
+## 7. HTTP Headers in Detail
+
+HTTP headers communicate additional information between clients and servers.
+
+### Common Security Headers
+
+| Header | Security Purpose |
+|---|---|
+| Content-Security-Policy | Helps prevent XSS and content injection |
+| Strict-Transport-Security | Enforces HTTPS connections |
+| X-Content-Type-Options | Prevents MIME-type sniffing |
+| X-Frame-Options | Helps prevent clickjacking |
+| Referrer-Policy | Controls referrer information |
+| Permissions-Policy | Restricts access to browser features |
+
+Example:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=31536000
+```
+
+Security headers help reduce browser-based attacks when configured correctly.
+
+---
+
+## 8. Cookies and Sessions
+
+Cookies are small pieces of data stored by a browser and associated with a website.
+
+They help websites remember information between requests.
+
+### How Cookies Work
+
+1. The client sends a request to the server.
+2. The server responds with a Set-Cookie header.
+3. The browser stores the cookie.
+4. The browser sends the cookie in subsequent requests.
+5. The server uses it to identify the associated session or preferences.
+
+### Example
+
+Server response:
+
+```http
+HTTP/1.1 200 OK
+Set-Cookie: sessionid=abc123; HttpOnly; Secure; SameSite=Lax
+```
+
+Subsequent client request:
+
+```http
+GET /dashboard HTTP/1.1
+Host: example.com
+Cookie: sessionid=abc123
+```
+
+### Important Cookie Attributes
+
+- **Secure:** Cookie is sent only over secure connections.
+- **HttpOnly:** Prevents JavaScript from accessing the cookie.
+- **SameSite:** Controls when cookies are sent with cross-site requests.
+- **Expires:** Defines when the cookie expires.
+- **Path:** Restricts the URL paths where the cookie is sent.
+
+### Cookies vs Sessions
+
+| Cookies | Sessions |
+|---|---|
+| Stored in the browser | Usually maintained server-side |
+| Can store preferences and identifiers | Commonly stores user session state |
+| Sent with matching HTTP requests | Identified through a session identifier |
+
+---
+
+## 9. HTTP vs HTTPS
+
+HTTPS is HTTP communication protected by TLS (Transport Layer Security).
+
+| HTTP | HTTPS |
+|---|---|
+| No TLS encryption | Uses TLS encryption |
+| Default port 80 | Default port 443 |
+| Data can be transmitted without transport encryption | Protects data in transit |
+| Does not provide TLS server authentication | Uses certificates to authenticate the server |
+
+### How HTTPS Works
+
+1. The browser connects to the web server.
+2. The server presents its TLS certificate.
+3. The browser validates the certificate.
+4. The client and server establish shared encryption keys through the TLS handshake.
+5. HTTP communication continues over the encrypted connection.
+
+HTTPS provides:
+
+- Confidentiality
+- Integrity
+- Server authentication
+
+**Important:** HTTPS does not automatically mean a website is trustworthy. It protects communication with the server but does not guarantee that the website itself is legitimate.
+
+---
+
+## 10. HTTP Versions
+
+| Version | Key Features |
+|---|---|
+| HTTP/0.9 | Basic GET requests |
+| HTTP/1.0 | Introduced headers and additional methods |
+| HTTP/1.1 | Persistent connections and improved caching |
+| HTTP/2 | Binary framing, multiplexing, and header compression |
+| HTTP/3 | Uses QUIC over UDP instead of TCP |
+
+### HTTP/1.1
+
+Uses TCP and supports persistent connections.
+
+### HTTP/2
+
+Introduces multiplexing, allowing multiple streams to share one connection.
+
+### HTTP/3
+
+Uses QUIC, which runs over UDP and incorporates TLS 1.3.
+
+---
+
+## 11. Practical HTTP Commands
+
+Understanding HTTP is important for troubleshooting and cybersecurity assessments.
+
+### A. Using curl
+
+`curl` is a command-line tool used to communicate with web servers.
+
+Check a website:
+
+```bash
+curl http://example.com
+```
+
+Display response headers:
+
+```bash
+curl -I http://example.com
+```
+
+Display request and response details:
+
+```bash
+curl -v http://example.com
+```
+
+Send a GET request:
+
+```bash
+curl -X GET http://example.com
+```
+
+Send a POST request:
+
+```bash
+curl -X POST http://example.com/login
+```
+
+Send custom headers:
+
+```bash
+curl -H "User-Agent: MyBrowser" http://example.com
+```
+
+### B. Using Netcat
+
+Netcat can establish a manual TCP connection to a web server.
+
+```bash
+nc example.com 80
+```
+
+Enter the following request:
+
+```http
+GET / HTTP/1.1
+Host: example.com
+
+```
+
+Note: Press Enter twice after the Host header to finish the HTTP request.
+
+### C. Using Browser Developer Tools
+
+1. Open a website in your browser.
+2. Press F12.
+3. Navigate to the Network tab.
+4. Reload the webpage.
+5. Select a request.
+6. Examine the Headers, Payload, Preview, and Response sections.
+
+This is useful for understanding real HTTP communication.
+
+---
+
+## 12. HTTP Security and Common Vulnerabilities
+
+HTTP knowledge is essential for identifying web application security issues.
+
+### 1. Cross-Site Scripting (XSS)
+
+An attacker injects malicious JavaScript into a webpage that executes in another user's browser.
+
+### 2. SQL Injection
+
+An attacker manipulates database queries through unsanitized application input.
+
+### 3. HTTP Request Smuggling
+
+Occurs when front-end and back-end servers interpret HTTP request boundaries differently.
+
+### 4. Insecure Direct Object Reference (IDOR)
+
+An application allows users to access resources belonging to other users by manipulating identifiers without proper authorization checks.
+
+### 5. Session Hijacking
+
+An attacker obtains a valid session identifier and uses it to impersonate another user.
+
+### 6. Missing Security Headers
+
+Improper security-header configuration can increase exposure to certain browser-based attacks.
+
+### 7. Directory Traversal
+
+An attacker manipulates file paths to attempt to access files outside the intended directory.
+
+**Security Best Practices:**
+
+- Always use HTTPS.
+- Validate and sanitize user input.
+- Implement proper authentication and authorization.
+- Use secure cookie attributes.
+- Configure appropriate security headers.
+- Keep web server software updated.
+- Avoid exposing sensitive information in URLs.
+- Monitor suspicious HTTP requests and server logs.
+
+---
+
+## 13. Important Ports to Remember
+
+| Port | Protocol / Service |
+|---|---|
+| 80 | HTTP |
+| 443 | HTTPS |
+| 8080 | Common alternative HTTP port |
+| 8443 | Common alternative HTTPS port |
+
+Ports 8080 and 8443 are common conventions, not mandatory HTTP/HTTPS ports.
+
+---
+
+## 14. Important Takeaways
+
+- HTTP stands for Hypertext Transfer Protocol.
+- HTTP operates at the Application Layer (Layer 7) of the OSI model.
+- HTTP is stateless by default.
+- Clients send HTTP requests and servers return HTTP responses.
+- GET retrieves resources.
+- POST submits data.
+- PUT creates or replaces resources.
+- DELETE requests resource deletion.
+- Status codes communicate request outcomes.
+- 2xx indicates success.
+- 3xx indicates redirection.
+- 4xx indicates client errors.
+- 5xx indicates server errors.
+- HTTPS uses TLS to protect HTTP communication.
+- Cookies and sessions help maintain user state.
+- `curl` and `netcat` are useful tools for inspecting HTTP communication.
+
+---
+
+## 15. Learning Resources
+
+- [TryHackMe](https://tryhackme.com/)
+- [MDN – HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [MDN – HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [MDN – HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+
+---
+
+## Conclusion
+
+HTTP is one of the fundamental protocols used in web communication. Understanding its methods, headers, status codes, cookies, and request-response mechanism provides a strong foundation for networking, technical support, web troubleshooting, and cybersecurity.
+
+This lab helped me understand how browsers and web servers communicate and how HTTP can be inspected using command-line tools such as curl and Netcat.
+
+**Learning by doing – TryHackMe | Cybersecurity Journey 🚀**
