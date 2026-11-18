@@ -1,0 +1,474 @@
+
+# 🌐 How Websites Work – TryHackMe
+
+## 📌 Introduction
+
+Websites are an essential part of the internet. Every time we visit a website, send a request, log in to an account, or download a file, multiple components work together behind the scenes.
+
+Understanding how websites work is important for cybersecurity because it helps us understand how web applications communicate, how data is transferred, and where potential security vulnerabilities can exist.
+
+This repository covers the fundamental concepts of how websites work, based on the TryHackMe learning module.
+
+---
+
+## 1. What Is a Website?
+
+A website is a collection of interconnected web pages, files, images, scripts, and other resources hosted on a web server.
+
+Users access websites through web browsers such as:
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Safari
+
+A website generally consists of two major components:
+
+**Frontend (Client Side)**
+
+The frontend is the part of a website that users interact with.
+
+Common technologies:
+- HTML – Defines the structure of a webpage.
+- CSS – Controls the appearance and layout.
+- JavaScript – Adds functionality and interactivity.
+
+**Backend (Server Side)**
+
+The backend handles operations that happen behind the scenes.
+
+Examples:
+- Processing login requests.
+- Communicating with databases.
+- Managing user accounts.
+- Processing payments.
+- Sending responses to browsers.
+
+Common backend technologies include Python, PHP, Java, Node.js, and Ruby.
+
+---
+
+## 2. How Do Websites Work?
+
+Websites operate using a client-server communication model.
+
+- Client: The user's browser or device.
+- Server: A computer that stores website files and processes requests.
+
+### Website Communication Process
+
+1. A user enters a website address in a browser.
+2. The browser performs a DNS lookup to find the server's IP address.
+3. The browser establishes a connection with the web server.
+4. The browser sends an HTTP or HTTPS request.
+5. The web server processes the request.
+6. The server sends an HTTP response.
+7. The browser interprets HTML, CSS, and JavaScript.
+8. The webpage is displayed to the user.
+
+### Example
+
+When a user visits:
+
+`https://example.com`
+
+The browser communicates with the server hosting example.com, requests the webpage, receives the response, and displays the website.
+
+---
+
+## 3. What Is a Web Server?
+
+A web server is a computer or software application responsible for receiving requests from clients and delivering website content.
+
+Its main responsibilities include:
+
+- Hosting website files.
+- Processing HTTP requests.
+- Sending HTTP responses.
+- Managing client connections.
+- Serving static and dynamic content.
+
+### Popular Web Servers
+
+| Web Server | Description |
+|---|---|
+| Apache | Open-source web server |
+| Nginx | High-performance web server |
+| Microsoft IIS | Web server developed by Microsoft |
+| LiteSpeed | High-performance web server |
+
+A web server typically listens for incoming requests on:
+
+- Port 80 – HTTP
+- Port 443 – HTTPS
+
+---
+
+## 4. What Is HTTP?
+
+HTTP stands for **Hypertext Transfer Protocol**.
+
+It is an application-layer protocol used for communication between web browsers and web servers.
+
+HTTP defines how clients request resources and how servers respond.
+
+### Common HTTP Methods
+
+| Method | Purpose |
+|---|---|
+| GET | Retrieves information from a server |
+| POST | Sends data to a server |
+| PUT | Creates or replaces a resource |
+| PATCH | Updates part of a resource |
+| DELETE | Deletes a resource |
+| HEAD | Retrieves response headers without the response body |
+| OPTIONS | Identifies supported communication methods |
+
+### Example HTTP Request
+
+```http
+GET /index.html HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+```
+
+This request asks the web server to return the index.html webpage.
+
+---
+
+## 5. HTTP Response Codes
+
+HTTP status codes indicate the result of a client's request.
+
+They are divided into five categories.
+
+| Status Code | Meaning |
+|---|---|
+| 200 OK | Request successful |
+| 201 Created | Resource successfully created |
+| 301 Moved Permanently | Resource permanently redirected |
+| 302 Found | Temporary redirection |
+| 400 Bad Request | Invalid request |
+| 401 Unauthorized | Authentication required |
+| 403 Forbidden | Access denied |
+| 404 Not Found | Resource not found |
+| 500 Internal Server Error | Server-side error |
+| 502 Bad Gateway | Invalid response from upstream server |
+| 503 Service Unavailable | Server temporarily unavailable |
+
+Understanding HTTP status codes is useful when troubleshooting websites and investigating web application issues.
+
+---
+
+## 6. What Is HTTPS?
+
+HTTPS stands for **Hypertext Transfer Protocol Secure**.
+
+It is the secure version of HTTP and uses TLS (Transport Layer Security) to encrypt communication between a browser and a web server.
+
+### Why HTTPS Is Important
+
+- Encrypts data transmitted between client and server.
+- Protects sensitive information.
+- Helps prevent unauthorized interception.
+- Provides server authentication through digital certificates.
+- Helps protect against man-in-the-middle attacks.
+
+### HTTP vs HTTPS
+
+| HTTP | HTTPS |
+|---|---|
+| Not encrypted by default | Encrypted using TLS |
+| Uses port 80 by default | Uses port 443 by default |
+| Less secure | More secure |
+| Data can be intercepted more easily | Provides confidentiality and integrity protections |
+
+---
+
+## 7. What Is DNS?
+
+DNS stands for **Domain Name System**.
+
+DNS translates human-readable domain names into IP addresses that computers use to communicate.
+
+For example:
+
+`google.com` → IP address of Google's server
+
+Without DNS, users would need to remember IP addresses instead of website names.
+
+### How DNS Works
+
+1. A user enters a domain name.
+2. The computer checks its local DNS cache.
+3. If the record is unavailable, a DNS resolver is contacted.
+4. The resolver locates the appropriate DNS record.
+5. The IP address is returned.
+6. The browser connects to the destination server.
+
+### Common DNS Record Types
+
+| Record | Purpose |
+|---|---|
+| A | Maps a domain to an IPv4 address |
+| AAAA | Maps a domain to an IPv6 address |
+| CNAME | Creates an alias for another domain |
+| MX | Specifies mail servers |
+| TXT | Stores text information, often for verification |
+| NS | Identifies authoritative name servers |
+
+DNS commonly uses port 53.
+
+---
+
+## 8. What Is a URL?
+
+URL stands for **Uniform Resource Locator**.
+
+It is the address used to access a resource on the internet.
+
+Example:
+
+`https://www.example.com:443/products?id=10#details`
+
+### Components of a URL
+
+| Component | Example | Description |
+|---|---|---|
+| Scheme | https | Protocol used |
+| Subdomain | www | Subdomain |
+| Domain | example.com | Main domain name |
+| Port | 443 | Communication port |
+| Path | /products | Requested resource |
+| Query String | ?id=10 | Additional parameters |
+| Fragment | #details | Specific section of a page |
+
+---
+
+## 9. Frontend Technologies
+
+Frontend technologies determine how a website looks and behaves.
+
+### HTML (HyperText Markup Language)
+
+HTML defines the structure and content of webpages.
+
+Examples:
+- Headings
+- Paragraphs
+- Images
+- Links
+- Forms
+- Tables
+
+### CSS (Cascading Style Sheets)
+
+CSS controls the presentation of webpages.
+
+Examples:
+- Colours
+- Fonts
+- Layouts
+- Backgrounds
+- Spacing
+- Responsive design
+
+### JavaScript
+
+JavaScript makes websites interactive.
+
+Examples:
+- Form validation
+- Interactive buttons
+- Dynamic content
+- Pop-up messages
+- Updating webpage elements
+
+---
+
+## 10. Backend and Databases
+
+The backend handles the logic and processing required by a website.
+
+A typical backend workflow:
+
+1. The user submits information through a webpage.
+2. The frontend sends the information to the backend.
+3. The backend validates and processes the request.
+4. The backend communicates with a database if required.
+5. The server returns a response.
+6. The frontend displays the result.
+
+### Common Database Technologies
+
+- MySQL
+- PostgreSQL
+- MongoDB
+- Microsoft SQL Server
+- SQLite
+
+Databases store information such as usernames, account details, orders, and application data.
+
+---
+
+## 11. Cookies and Sessions
+
+### Cookies
+
+Cookies are small pieces of data stored in a user's browser by websites.
+
+They are commonly used for:
+- Remembering user preferences.
+- Maintaining login states.
+- Tracking website activity.
+- Storing session identifiers.
+
+### Sessions
+
+Sessions allow websites to maintain information about a user's interaction across multiple requests.
+
+For example, after logging in, a website may use a session identifier to recognize the authenticated user.
+
+### Security Considerations
+
+Poorly protected cookies and sessions can expose users to attacks such as:
+
+- Session hijacking.
+- Cross-Site Scripting (XSS).
+- Session fixation.
+
+Security attributes such as `HttpOnly`, `Secure`, and `SameSite` help protect cookies.
+
+---
+
+## 12. How a Website Loads – Complete Workflow
+
+The following is a simplified representation of the complete process.
+
+```text
+        USER
+          |
+          v
+    WEB BROWSER
+          |
+          v
+      DNS LOOKUP
+          |
+          v
+   SERVER IP ADDRESS
+          |
+          v
+  TCP CONNECTION / TLS
+          |
+          v
+    HTTP REQUEST
+          |
+          v
+     WEB SERVER
+          |
+          v
+   BACKEND PROCESSING
+          |
+          v
+      DATABASE
+          |
+          v
+    HTTP RESPONSE
+          |
+          v
+     WEB BROWSER
+          |
+          v
+   RENDERED WEBSITE
+```
+
+Note: The database interaction is optional and depends on the requested resource. HTTPS also involves TLS negotiation before encrypted HTTP communication begins.
+
+---
+
+## 13. Cybersecurity Relevance
+
+Understanding how websites work is a fundamental requirement for web application security and penetration testing.
+
+Some common web vulnerabilities include:
+
+| Vulnerability | Description |
+|---|---|
+| SQL Injection | Manipulating database queries through unsafe input handling |
+| Cross-Site Scripting (XSS) | Injecting malicious scripts into webpages |
+| CSRF | Tricking authenticated users into performing unwanted actions |
+| IDOR | Accessing resources without proper authorization checks |
+| Directory Traversal | Accessing files outside the intended directory |
+| Authentication Bypass | Circumventing authentication mechanisms |
+| Session Hijacking | Taking control of another user's session |
+
+Learning the fundamentals of web communication helps security professionals understand how these vulnerabilities occur and how to prevent them.
+
+---
+
+## 14. Important Commands for Practical Understanding
+
+### Check DNS Resolution
+
+```bash
+nslookup example.com
+```
+
+### Use Dig to Query DNS
+
+```bash
+dig example.com
+```
+
+### Check HTTP Response Headers
+
+```bash
+curl -I http://example.com
+```
+
+### Send an HTTP GET Request
+
+```bash
+curl https://example.com
+```
+
+### Check Network Connectivity
+
+```bash
+ping example.com
+```
+
+### Check Open Web Ports
+
+```bash
+nmap -p 80,443 example.com
+```
+
+Only scan systems you own or have explicit permission to test.
+
+---
+
+## 15. Key Takeaways
+
+- Websites operate using the client-server model.
+- Browsers communicate with web servers using HTTP or HTTPS.
+- DNS translates domain names into IP addresses.
+- Web servers process requests and deliver website resources.
+- HTML, CSS, and JavaScript form the foundation of frontend development.
+- Backend technologies handle application logic and database operations.
+- Cookies and sessions help maintain user state.
+- HTTPS uses TLS to secure communication.
+- Understanding web technologies is essential for cybersecurity and penetration testing.
+
+---
+
+## 🎯 Conclusion
+
+Understanding how websites work provides a strong foundation for learning web application security, networking, and penetration testing.
+
+These concepts help explain what happens behind the scenes whenever a user accesses a website and how different technologies work together to deliver web content.
+
+**Learning never stops. Keep exploring, practising, and challenging yourself every day!** 🚀
+
+#TryHackMe #CyberSecurity #WebFundamentals #HTTP #HTTPS #DNS #Networking #PenetrationTesting
