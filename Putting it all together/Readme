@@ -1,0 +1,494 @@
+
+# 🚀 Putting It All Together – TryHackMe
+
+## 📌 Introduction
+
+This room focuses on bringing together the knowledge and skills learned in previous Metasploit modules and applying them in a practical penetration testing scenario.
+
+Metasploit Framework is a powerful penetration testing platform that helps security professionals discover hosts, identify open ports, enumerate services, identify vulnerabilities, and manage penetration testing engagements.
+
+This documentation covers the important concepts, commands, and practical exercises explored during the TryHackMe room.
+
+---
+
+## 1. What Is Metasploit Framework?
+
+Metasploit Framework is an open-source penetration testing framework used to identify, validate, and exploit security vulnerabilities in computer systems and networks.
+
+### Key Components
+
+| Component | Description |
+|---|---|
+| Exploits | Code used to take advantage of vulnerabilities |
+| Payloads | Code executed on a target after successful exploitation |
+| Auxiliary | Modules for scanning, enumeration, and other tasks |
+| Encoders | Transform payloads into different formats |
+| Post | Modules used after gaining access to a system |
+| NOPs | No-operation instructions used in exploit development |
+
+---
+
+## 2. Starting PostgreSQL and Metasploit Database
+
+Metasploit uses PostgreSQL to store information collected during penetration testing.
+
+The database helps maintain information about discovered hosts, services, vulnerabilities, credentials, and other assessment data.
+
+### Start PostgreSQL
+
+```bash
+systemctl start postgresql
+```
+
+### Initialize Metasploit Database
+
+```bash
+msfdb init
+```
+
+If running as root produces a permission error, the initialization may need to be performed using the appropriate non-root account.
+
+```bash
+sudo -u postgres msfdb init
+```
+
+### Launch Metasploit
+
+```bash
+msfconsole
+```
+
+### Check Database Connection
+
+Inside Metasploit:
+
+```bash
+db_status
+```
+
+Expected output:
+
+```text
+[*] Connected to msf. Connection type: postgresql.
+```
+
+---
+
+## 3. Metasploit Workspaces
+
+Workspaces help organise information from different penetration testing projects.
+
+For example, if a security assessment involves multiple networks, separate workspaces can keep their results organised.
+
+### List Workspaces
+
+```bash
+workspace
+```
+
+### Create a Workspace
+
+```bash
+workspace -a TryHackMe
+```
+
+### Switch Workspace
+
+```bash
+workspace TryHackMe
+```
+
+### View Workspace Details
+
+```bash
+workspace -v
+```
+
+### Delete a Workspace
+
+```bash
+workspace -d TryHackMe
+```
+
+**Important:** The asterisk (*) indicates the currently active workspace.
+
+---
+
+## 4. Managing Hosts and Services
+
+Metasploit database commands help retrieve information collected during an assessment.
+
+### Display Discovered Hosts
+
+```bash
+hosts
+```
+
+### Display Discovered Services
+
+```bash
+services
+```
+
+### Display Discovered Vulnerabilities
+
+```bash
+vulns
+```
+
+### Display Stored Credentials
+
+```bash
+creds
+```
+
+### Run Nmap Through Metasploit
+
+```bash
+db_nmap -sV <TARGET-IP>
+```
+
+The `db_nmap` command runs Nmap and automatically stores discovered information in the current Metasploit workspace.
+
+---
+
+## 5. Port Scanning
+
+Port scanning identifies open ports on a target system and helps determine which services may be running.
+
+### Search for Port Scanning Modules
+
+```bash
+search portscan
+```
+
+### Select TCP Port Scanner
+
+```bash
+use auxiliary/scanner/portscan/tcp
+```
+
+### Configure Target IP
+
+```bash
+set RHOSTS <TARGET-IP>
+```
+
+### Specify Port Range
+
+```bash
+set PORTS 1-65535
+```
+
+### Execute Scan
+
+```bash
+run
+```
+
+### Example Output
+
+```text
+[+] 10.10.10.10 - TCP OPEN
+```
+
+This indicates that the specified TCP port is accepting connections.
+
+### Important Nmap Commands
+
+Scan common ports:
+
+```bash
+nmap <TARGET-IP>
+```
+
+Scan all TCP ports:
+
+```bash
+nmap -p- <TARGET-IP>
+```
+
+Detect service versions:
+
+```bash
+nmap -sV <TARGET-IP>
+```
+
+Perform service detection and default scripts:
+
+```bash
+nmap -sC -sV <TARGET-IP>
+```
+
+---
+
+## 6. Service Enumeration
+
+Service enumeration helps identify applications and services running on open ports.
+
+### Identify a Service on Port 8000
+
+```bash
+nmap -sV -p 8000 <TARGET-IP>
+```
+
+### Check HTTP Response Headers
+
+```bash
+curl -I http://<TARGET-IP>:8000
+```
+
+### Access a Web Service
+
+```text
+http://<TARGET-IP>:8000
+```
+
+An open port does not necessarily indicate which application is running. Service detection provides additional information.
+
+---
+
+## 7. NetBIOS Enumeration
+
+NetBIOS is a networking protocol interface traditionally used for communication and name identification between devices on local networks.
+
+NetBIOS enumeration can help identify the name of a target system.
+
+### Search for NetBIOS Scanner
+
+```bash
+search netbios/nbname
+```
+
+### Select the Scanner
+
+```bash
+use auxiliary/scanner/netbios/nbname
+```
+
+### Set Target
+
+```bash
+set RHOSTS <TARGET-IP>
+```
+
+### Execute Scanner
+
+```bash
+run
+```
+
+The output can reveal the NetBIOS name associated with the target.
+
+---
+
+## 8. SMB Enumeration and Authentication
+
+SMB stands for Server Message Block.
+
+It is a network protocol used for sharing files, printers, and other resources between devices.
+
+SMB commonly operates on TCP port 445.
+
+### Important SMB Information
+
+| Port | Service |
+|---|---|
+| 139 | NetBIOS Session Service |
+| 445 | SMB |
+
+### Search for SMB Login Scanner
+
+```bash
+search smb_login
+```
+
+### Select the Module
+
+```bash
+use auxiliary/scanner/smb/smb_login
+```
+
+### Configure Target
+
+```bash
+set RHOSTS <TARGET-IP>
+```
+
+### Set Username
+
+```bash
+set SMBUser penny
+```
+
+### Specify Password Wordlist
+
+```bash
+set PASS_FILE /path/to/wordlist.txt
+```
+
+### Execute Scanner
+
+```bash
+run
+```
+
+The scanner attempts authentication using the supplied username and password list.
+
+A successful authentication result may look like:
+
+```text
+[+] Target:445 - Success: 'penny:password'
+```
+
+The actual password must be read from the lab's output.
+
+**Security Note:** Password auditing should only be performed against systems for which you have explicit permission.
+
+---
+
+## 9. SMTP Enumeration
+
+SMTP stands for Simple Mail Transfer Protocol.
+
+It is used to send emails between mail clients and mail servers.
+
+### Common SMTP Ports
+
+| Port | Purpose |
+|---|---|
+| 25 | SMTP |
+| 465 | SMTP over implicit TLS |
+| 587 | SMTP submission |
+
+### SMTP Open Relay
+
+An SMTP open relay is a mail server that allows unauthorised users to send emails through it to other destinations.
+
+This can be abused for spam, phishing, and other malicious activities.
+
+### Search for SMTP Relay Scanner
+
+```bash
+search smtp_relay
+```
+
+### Select the Module
+
+```bash
+use auxiliary/scanner/smtp/smtp_relay
+```
+
+### View Module Information
+
+```bash
+info
+```
+
+The module information includes details about the module and its author.
+
+### Configure Target
+
+```bash
+set RHOSTS <TARGET-IP>
+```
+
+### Run the Scanner
+
+```bash
+run
+```
+
+The scanner checks whether the SMTP server permits relay operations under the tested conditions.
+
+---
+
+## 10. Metasploit Auxiliary Modules
+
+Auxiliary modules perform tasks such as scanning, enumeration, information gathering, and service checks.
+
+Some useful modules include:
+
+| Module | Purpose |
+|---|---|
+| auxiliary/scanner/portscan/tcp | TCP port scanning |
+| auxiliary/scanner/portscan/syn | SYN port scanning |
+| auxiliary/scanner/netbios/nbname | NetBIOS name enumeration |
+| auxiliary/scanner/smb/smb_login | SMB authentication testing |
+| auxiliary/scanner/smtp/smtp_relay | SMTP open relay testing |
+
+### Basic Module Workflow
+
+```bash
+search <module-name>
+use <module-path>
+show options
+set RHOSTS <TARGET-IP>
+run
+```
+
+This is a common workflow for configuring and executing Metasploit auxiliary modules.
+
+---
+
+## 11. Important Metasploit Commands
+
+| Command | Purpose |
+|---|---|
+| `msfconsole` | Launch Metasploit |
+| `db_status` | Check database connectivity |
+| `search` | Search for modules |
+| `use` | Select a module |
+| `info` | Display module information |
+| `show options` | Display configurable options |
+| `set RHOSTS` | Configure target IP |
+| `set PORTS` | Configure port range |
+| `unset RHOSTS` | Clear module-specific target |
+| `setg RHOSTS` | Set a global target |
+| `unsetg RHOSTS` | Clear global target |
+| `run` | Execute the selected module |
+| `hosts` | Display discovered hosts |
+| `services` | Display discovered services |
+| `vulns` | Display discovered vulnerabilities |
+| `creds` | Display stored credentials |
+| `workspace` | Manage workspaces |
+| `back` | Exit the current module |
+
+---
+
+## 12. Key Takeaways
+
+Through this room, I learned how to:
+
+- Configure and verify the Metasploit database.
+- Manage separate penetration testing workspaces.
+- Store and retrieve host and service information.
+- Perform TCP port scanning.
+- Identify services running on specific ports.
+- Enumerate NetBIOS names.
+- Understand SMB and authentication testing.
+- Use wordlists for authorised password auditing.
+- Understand SMTP and open relay detection.
+- Search, configure, and execute auxiliary modules.
+
+---
+
+## 🎯 Conclusion
+
+The Putting It All Together room demonstrates how different Metasploit capabilities work together during a penetration testing engagement.
+
+Understanding database management, workspaces, port scanning, service enumeration, and auxiliary modules provides a strong foundation for network reconnaissance and security assessments.
+
+This practical experience is an important step in my ongoing cybersecurity learning journey through TryHackMe.
+
+**Keep learning, keep practising, and keep challenging yourself every day!** 🚀
+
+---
+
+## 📚 Learning Resources
+
+- [TryHackMe](https://tryhackme.com/)
+- [Metasploit Documentation](https://docs.metasploit.com/)
+- [Nmap Documentation](https://nmap.org/book/man.html)
+
+#TryHackMe #Metasploit #CyberSecurity #PenetrationTesting #NetworkScanning #SMB #SMTP #NetBIOS #Nmap
