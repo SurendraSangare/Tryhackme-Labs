@@ -1,494 +1,326 @@
 
-# 🚀 Putting It All Together – TryHackMe
+# 🌐 Putting It All Together – TryHackMe
 
 ## 📌 Introduction
 
-This room focuses on bringing together the knowledge and skills learned in previous Metasploit modules and applying them in a practical penetration testing scenario.
+This room explains how websites work behind the scenes and how different components communicate to deliver web content to users.
 
-Metasploit Framework is a powerful penetration testing platform that helps security professionals discover hosts, identify open ports, enumerate services, identify vulnerabilities, and manage penetration testing engagements.
-
-This documentation covers the important concepts, commands, and practical exercises explored during the TryHackMe room.
+It covers the architecture of websites, web servers, databases, load balancers, content delivery networks (CDNs), and the role of different technologies in handling user requests.
 
 ---
 
-## 1. What Is Metasploit Framework?
+## 1. How Websites Work
 
-Metasploit Framework is an open-source penetration testing framework used to identify, validate, and exploit security vulnerabilities in computer systems and networks.
+A website is made up of several components that work together to deliver information to users.
 
-### Key Components
+When a user enters a website address in a browser, multiple processes take place behind the scenes.
 
-| Component | Description |
-|---|---|
-| Exploits | Code used to take advantage of vulnerabilities |
-| Payloads | Code executed on a target after successful exploitation |
-| Auxiliary | Modules for scanning, enumeration, and other tasks |
-| Encoders | Transform payloads into different formats |
-| Post | Modules used after gaining access to a system |
-| NOPs | No-operation instructions used in exploit development |
+### Basic Website Request Flow
+
+1. The user enters a website URL in the browser.
+2. DNS resolves the domain name into an IP address.
+3. The browser establishes a connection with the web server.
+4. The browser sends an HTTP or HTTPS request.
+5. The server processes the request.
+6. If required, the server communicates with a database.
+7. The server returns the requested information.
+8. The browser renders the website.
 
 ---
 
-## 2. Starting PostgreSQL and Metasploit Database
+## 2. Web Servers
 
-Metasploit uses PostgreSQL to store information collected during penetration testing.
+A web server is responsible for receiving requests from browsers and delivering website content.
 
-The database helps maintain information about discovered hosts, services, vulnerabilities, credentials, and other assessment data.
+It can serve static files or process dynamic requests using server-side applications.
 
-### Start PostgreSQL
+### Examples of Web Servers
 
-```bash
-systemctl start postgresql
-```
+- Apache HTTP Server
+- Nginx
+- Microsoft IIS
 
-### Initialize Metasploit Database
+### Types of Website Content
 
-```bash
-msfdb init
-```
+**Static Content:**
+- HTML files
+- CSS files
+- JavaScript files
+- Images
 
-If running as root produces a permission error, the initialization may need to be performed using the appropriate non-root account.
+**Dynamic Content:**
+- User profiles
+- Product information
+- Login details
+- Search results
 
-```bash
-sudo -u postgres msfdb init
-```
+---
 
-### Launch Metasploit
+## 3. Databases
 
-```bash
-msfconsole
-```
+Databases store and organise information required by websites.
 
-### Check Database Connection
+For example, an e-commerce website may use a database to store:
 
-Inside Metasploit:
+- Customer information
+- Product details
+- Orders
+- Payment records
+- Inventory information
 
-```bash
-db_status
-```
+When a user requests information, the application can retrieve the relevant data from the database and send it back to the browser.
 
-Expected output:
+### Examples of Databases
+
+- MySQL
+- PostgreSQL
+- Microsoft SQL Server
+- MongoDB
+
+---
+
+## 4. Load Balancers
+
+A load balancer distributes incoming network traffic across multiple servers.
+
+It prevents a single server from handling all requests and helps improve website availability and performance.
+
+### How Load Balancing Works
+
+1. A user sends a request to a website.
+2. The request reaches the load balancer.
+3. The load balancer selects an available server.
+4. The selected server processes the request.
+5. The response is returned to the user.
+
+### Benefits
+
+- Distributes traffic.
+- Prevents server overload.
+- Improves availability.
+- Supports scalability.
+- Helps maintain performance during high traffic.
+
+---
+
+## 5. Content Delivery Networks (CDNs)
+
+A CDN is a geographically distributed network of servers that delivers website content from locations closer to users.
+
+CDNs are commonly used to deliver static resources such as images, videos, CSS, and JavaScript files.
+
+### How a CDN Works
+
+1. A user requests content from a website.
+2. The CDN checks whether the requested content is available in its cache.
+3. If available, it delivers the cached content.
+4. Otherwise, it retrieves the content from the origin server and may cache it for future requests.
+
+### Benefits
+
+- Faster content delivery.
+- Reduced latency.
+- Reduced load on origin servers.
+- Improved availability.
+
+---
+
+## 6. DNS (Domain Name System)
+
+DNS translates human-readable domain names into IP addresses.
+
+For example:
 
 ```text
-[*] Connected to msf. Connection type: postgresql.
+google.com → IP Address
 ```
+
+Without DNS, users would need to remember the IP addresses of websites.
+
+### DNS Resolution Process
+
+1. Browser checks its DNS cache.
+2. The operating system may check its cache.
+3. A DNS resolver queries the DNS hierarchy if needed.
+4. The authoritative DNS server provides the required record.
+5. The browser uses the returned IP address to connect to the website.
 
 ---
 
-## 3. Metasploit Workspaces
+## 7. HTTP and HTTPS
 
-Workspaces help organise information from different penetration testing projects.
+HTTP stands for Hypertext Transfer Protocol.
 
-For example, if a security assessment involves multiple networks, separate workspaces can keep their results organised.
+It is used for communication between web browsers and web servers.
 
-### List Workspaces
+HTTPS is the secure version of HTTP, using TLS to protect data exchanged between the browser and server.
 
-```bash
-workspace
-```
+### Common HTTP Methods
 
-### Create a Workspace
+| Method | Purpose |
+|---|---|
+| GET | Retrieve information |
+| POST | Submit information |
+| PUT | Update or replace a resource |
+| PATCH | Partially update a resource |
+| DELETE | Delete a resource |
+| HEAD | Retrieve response headers |
 
-```bash
-workspace -a TryHackMe
-```
+### Common HTTP Status Codes
 
-### Switch Workspace
-
-```bash
-workspace TryHackMe
-```
-
-### View Workspace Details
-
-```bash
-workspace -v
-```
-
-### Delete a Workspace
-
-```bash
-workspace -d TryHackMe
-```
-
-**Important:** The asterisk (*) indicates the currently active workspace.
+| Status Code | Meaning |
+|---|---|
+| 200 | OK |
+| 301 | Moved Permanently |
+| 302 | Found / Temporary Redirect |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+| 500 | Internal Server Error |
+| 502 | Bad Gateway |
+| 503 | Service Unavailable |
 
 ---
 
-## 4. Managing Hosts and Services
+## 8. How All Components Work Together
 
-Metasploit database commands help retrieve information collected during an assessment.
+Consider a user visiting an e-commerce website.
 
-### Display Discovered Hosts
+1. **DNS:** Resolves the website domain into an IP address.
+2. **CDN:** Delivers cached static resources from a nearby location.
+3. **Load Balancer:** Distributes incoming requests across available servers.
+4. **Web Server:** Receives and processes HTTP requests.
+5. **Application Server:** Executes application logic.
+6. **Database:** Stores and retrieves customer and product information.
+7. **Browser:** Displays the final webpage to the user.
 
-```bash
-hosts
-```
-
-### Display Discovered Services
-
-```bash
-services
-```
-
-### Display Discovered Vulnerabilities
-
-```bash
-vulns
-```
-
-### Display Stored Credentials
-
-```bash
-creds
-```
-
-### Run Nmap Through Metasploit
-
-```bash
-db_nmap -sV <TARGET-IP>
-```
-
-The `db_nmap` command runs Nmap and automatically stores discovered information in the current Metasploit workspace.
-
----
-
-## 5. Port Scanning
-
-Port scanning identifies open ports on a target system and helps determine which services may be running.
-
-### Search for Port Scanning Modules
-
-```bash
-search portscan
-```
-
-### Select TCP Port Scanner
-
-```bash
-use auxiliary/scanner/portscan/tcp
-```
-
-### Configure Target IP
-
-```bash
-set RHOSTS <TARGET-IP>
-```
-
-### Specify Port Range
-
-```bash
-set PORTS 1-65535
-```
-
-### Execute Scan
-
-```bash
-run
-```
-
-### Example Output
+### Simplified Architecture
 
 ```text
-[+] 10.10.10.10 - TCP OPEN
-```
-
-This indicates that the specified TCP port is accepting connections.
-
-### Important Nmap Commands
-
-Scan common ports:
-
-```bash
-nmap <TARGET-IP>
-```
-
-Scan all TCP ports:
-
-```bash
-nmap -p- <TARGET-IP>
-```
-
-Detect service versions:
-
-```bash
-nmap -sV <TARGET-IP>
-```
-
-Perform service detection and default scripts:
-
-```bash
-nmap -sC -sV <TARGET-IP>
+           USER / BROWSER
+                  |
+                  v
+                DNS
+                  |
+                  v
+             CDN / Cache
+                  |
+                  v
+             LOAD BALANCER
+                  |
+          +-------+-------+
+          |               |
+          v               v
+      WEB SERVER 1    WEB SERVER 2
+          |               |
+          +-------+-------+
+                  |
+                  v
+          APPLICATION SERVER
+                  |
+                  v
+              DATABASE
+                  |
+                  v
+           RESPONSE TO USER
 ```
 
 ---
 
-## 6. Service Enumeration
+## 9. Cybersecurity Perspective
 
-Service enumeration helps identify applications and services running on open ports.
+Understanding website architecture is important in cybersecurity because every component can introduce potential security risks.
 
-### Identify a Service on Port 8000
+Examples include:
 
-```bash
-nmap -sV -p 8000 <TARGET-IP>
-```
-
-### Check HTTP Response Headers
-
-```bash
-curl -I http://<TARGET-IP>:8000
-```
-
-### Access a Web Service
-
-```text
-http://<TARGET-IP>:8000
-```
-
-An open port does not necessarily indicate which application is running. Service detection provides additional information.
-
----
-
-## 7. NetBIOS Enumeration
-
-NetBIOS is a networking protocol interface traditionally used for communication and name identification between devices on local networks.
-
-NetBIOS enumeration can help identify the name of a target system.
-
-### Search for NetBIOS Scanner
-
-```bash
-search netbios/nbname
-```
-
-### Select the Scanner
-
-```bash
-use auxiliary/scanner/netbios/nbname
-```
-
-### Set Target
-
-```bash
-set RHOSTS <TARGET-IP>
-```
-
-### Execute Scanner
-
-```bash
-run
-```
-
-The output can reveal the NetBIOS name associated with the target.
-
----
-
-## 8. SMB Enumeration and Authentication
-
-SMB stands for Server Message Block.
-
-It is a network protocol used for sharing files, printers, and other resources between devices.
-
-SMB commonly operates on TCP port 445.
-
-### Important SMB Information
-
-| Port | Service |
+| Component | Potential Security Risk |
 |---|---|
-| 139 | NetBIOS Session Service |
-| 445 | SMB |
+| Web Server | Server misconfiguration |
+| Database | SQL Injection |
+| DNS | DNS spoofing |
+| Load Balancer | Improper access controls |
+| CDN | Cache poisoning |
+| HTTP | Unencrypted data transmission |
+| Application Server | Authentication vulnerabilities |
 
-### Search for SMB Login Scanner
-
-```bash
-search smb_login
-```
-
-### Select the Module
-
-```bash
-use auxiliary/scanner/smb/smb_login
-```
-
-### Configure Target
-
-```bash
-set RHOSTS <TARGET-IP>
-```
-
-### Set Username
-
-```bash
-set SMBUser penny
-```
-
-### Specify Password Wordlist
-
-```bash
-set PASS_FILE /path/to/wordlist.txt
-```
-
-### Execute Scanner
-
-```bash
-run
-```
-
-The scanner attempts authentication using the supplied username and password list.
-
-A successful authentication result may look like:
-
-```text
-[+] Target:445 - Success: 'penny:password'
-```
-
-The actual password must be read from the lab's output.
-
-**Security Note:** Password auditing should only be performed against systems for which you have explicit permission.
+Understanding these components helps security professionals identify weaknesses and assess the security of web applications.
 
 ---
 
-## 9. SMTP Enumeration
+## 10. Quiz and Knowledge Check
 
-SMTP stands for Simple Mail Transfer Protocol.
+### Q1. What translates domain names into IP addresses?
 
-It is used to send emails between mail clients and mail servers.
+**Answer:** DNS (Domain Name System).
 
-### Common SMTP Ports
+### Q2. What is the primary function of a web server?
 
-| Port | Purpose |
-|---|---|
-| 25 | SMTP |
-| 465 | SMTP over implicit TLS |
-| 587 | SMTP submission |
+**Answer:** To receive client requests and deliver website content.
 
-### SMTP Open Relay
+### Q3. Which component distributes incoming traffic across multiple servers?
 
-An SMTP open relay is a mail server that allows unauthorised users to send emails through it to other destinations.
+**Answer:** Load Balancer.
 
-This can be abused for spam, phishing, and other malicious activities.
+### Q4. What is the primary purpose of a CDN?
 
-### Search for SMTP Relay Scanner
+**Answer:** To deliver content from geographically distributed servers, reducing latency.
 
-```bash
-search smtp_relay
-```
+### Q5. Which protocol provides encrypted communication between browsers and web servers?
 
-### Select the Module
+**Answer:** HTTPS.
 
-```bash
-use auxiliary/scanner/smtp/smtp_relay
-```
+### Q6. Which component stores website information such as customer details and product records?
 
-### View Module Information
+**Answer:** Database.
 
-```bash
-info
-```
+### Q7. What does HTTP status code 404 indicate?
 
-The module information includes details about the module and its author.
+**Answer:** Resource Not Found.
 
-### Configure Target
+### Q8. What does HTTP status code 500 indicate?
 
-```bash
-set RHOSTS <TARGET-IP>
-```
+**Answer:** Internal Server Error.
 
-### Run the Scanner
+### Q9. Which HTTP method is commonly used to retrieve information?
 
-```bash
-run
-```
+**Answer:** GET.
 
-The scanner checks whether the SMTP server permits relay operations under the tested conditions.
+### Q10. What happens when a browser requests a website?
+
+**Answer:** DNS resolution, connection establishment, HTTP request processing, server-side processing, and delivery of the response to the browser.
 
 ---
 
-## 10. Metasploit Auxiliary Modules
+## 11. Key Takeaways
 
-Auxiliary modules perform tasks such as scanning, enumeration, information gathering, and service checks.
+Through this room, I learned:
 
-Some useful modules include:
-
-| Module | Purpose |
-|---|---|
-| auxiliary/scanner/portscan/tcp | TCP port scanning |
-| auxiliary/scanner/portscan/syn | SYN port scanning |
-| auxiliary/scanner/netbios/nbname | NetBIOS name enumeration |
-| auxiliary/scanner/smb/smb_login | SMB authentication testing |
-| auxiliary/scanner/smtp/smtp_relay | SMTP open relay testing |
-
-### Basic Module Workflow
-
-```bash
-search <module-name>
-use <module-path>
-show options
-set RHOSTS <TARGET-IP>
-run
-```
-
-This is a common workflow for configuring and executing Metasploit auxiliary modules.
-
----
-
-## 11. Important Metasploit Commands
-
-| Command | Purpose |
-|---|---|
-| `msfconsole` | Launch Metasploit |
-| `db_status` | Check database connectivity |
-| `search` | Search for modules |
-| `use` | Select a module |
-| `info` | Display module information |
-| `show options` | Display configurable options |
-| `set RHOSTS` | Configure target IP |
-| `set PORTS` | Configure port range |
-| `unset RHOSTS` | Clear module-specific target |
-| `setg RHOSTS` | Set a global target |
-| `unsetg RHOSTS` | Clear global target |
-| `run` | Execute the selected module |
-| `hosts` | Display discovered hosts |
-| `services` | Display discovered services |
-| `vulns` | Display discovered vulnerabilities |
-| `creds` | Display stored credentials |
-| `workspace` | Manage workspaces |
-| `back` | Exit the current module |
-
----
-
-## 12. Key Takeaways
-
-Through this room, I learned how to:
-
-- Configure and verify the Metasploit database.
-- Manage separate penetration testing workspaces.
-- Store and retrieve host and service information.
-- Perform TCP port scanning.
-- Identify services running on specific ports.
-- Enumerate NetBIOS names.
-- Understand SMB and authentication testing.
-- Use wordlists for authorised password auditing.
-- Understand SMTP and open relay detection.
-- Search, configure, and execute auxiliary modules.
+- How websites communicate with browsers.
+- How web servers handle incoming requests.
+- How databases store and retrieve information.
+- How load balancers distribute network traffic.
+- How CDNs improve website performance.
+- How DNS resolves domain names.
+- How HTTP and HTTPS support web communication.
+- How different website components work together.
+- Potential security risks associated with web infrastructure.
 
 ---
 
 ## 🎯 Conclusion
 
-The Putting It All Together room demonstrates how different Metasploit capabilities work together during a penetration testing engagement.
+Websites are not powered by a single component. They rely on multiple interconnected technologies, including DNS, web servers, application servers, databases, load balancers, and CDNs.
 
-Understanding database management, workspaces, port scanning, service enumeration, and auxiliary modules provides a strong foundation for network reconnaissance and security assessments.
+Understanding how these components interact provides a strong foundation for learning web technologies, network security, and web application penetration testing.
 
-This practical experience is an important step in my ongoing cybersecurity learning journey through TryHackMe.
+**Keep learning, keep practising, and keep challenging yourself every day!**
 
-**Keep learning, keep practising, and keep challenging yourself every day!** 🚀
-
----
-
-## 📚 Learning Resources
+## 📚 References
 
 - [TryHackMe](https://tryhackme.com/)
-- [Metasploit Documentation](https://docs.metasploit.com/)
-- [Nmap Documentation](https://nmap.org/book/man.html)
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [Cloudflare Learning Center](https://www.cloudflare.com/learning/)
+- [OWASP](https://owasp.org/)
 
-#TryHackMe #Metasploit #CyberSecurity #PenetrationTesting #NetworkScanning #SMB #SMTP #NetBIOS #Nmap
+#TryHackMe #WebInfrastructure #WebServers #DNS #HTTP #CyberSecurity #Networking
