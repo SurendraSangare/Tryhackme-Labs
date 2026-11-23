@@ -1,0 +1,111 @@
+# TryHackMe – The CIA Triad
+
+## 📌 Room Overview
+
+This room introduces the **CIA Triad**, one of the fundamental concepts of cybersecurity. It explains the three core principles used to protect information and maintain information security.
+
+The CIA Triad stands for:
+
+- **Confidentiality**
+- **Integrity**
+- **Availability**
+
+These three principles help organizations protect sensitive information against unauthorized access, modification, and disruption.
+
+## 🎯 Learning Objectives
+
+- Understand the three principles of the CIA Triad.
+- Learn how confidentiality protects sensitive information.
+- Understand how integrity ensures data accuracy and consistency.
+- Learn why availability is important for systems and services.
+- Identify real-world cybersecurity threats affecting each principle.
+- Understand security measures used to maintain the CIA Triad.
+
+## 🔐 1. Confidentiality
+
+Confidentiality ensures that information is accessible only to authorized individuals.
+
+**Examples:**
+- Password protection
+- Encryption
+- Multi-Factor Authentication (MFA)
+- Access Control
+- Role-Based Access Control (RBAC)
+
+**Common Threats:**
+- Data breaches
+- Phishing attacks
+- Unauthorized access
+- Password theft
+
+## 🛡️ 2. Integrity
+
+Integrity ensures that information remains accurate, complete, and unchanged unless modified by authorized users.
+
+**Examples:**
+- Hashing
+- Digital signatures
+- File integrity monitoring
+- Version control
+- Checksums
+
+**Common Threats:**
+- Data tampering
+- Man-in-the-Middle (MITM) attacks
+- Unauthorized modification
+- Malware infections
+
+## ⚡ 3. Availability
+
+Availability ensures that systems, applications, and information remain accessible to authorized users whenever needed.
+
+**Examples:**
+- Regular backups
+- Redundancy
+- Disaster recovery plans
+- Load balancing
+- System maintenance
+
+**Common Threats:**
+- Distributed Denial-of-Service (DDoS)
+- Ransomware attacks
+- Hardware failures
+- Power outages
+- Network disruptions
+
+## 📊 CIA Triad Summary
+
+| Principle | Meaning | Security Goal |
+|---|---|---|
+| Confidentiality | Protect information from unauthorized access | Privacy |
+| Integrity | Protect information from unauthorized modification | Accuracy |
+| Availability | Ensure information and services are accessible | Accessibility |
+
+## 🧪 Practical Learning
+
+**Platform:** TryHackMe  
+**Room:** The CIA Triad  
+**Category:** Cybersecurity Fundamentals  
+**Topics:** Information Security, Confidentiality, Integrity, Availability
+
+This room provides foundational knowledge of how the CIA Triad is applied to real-world cybersecurity scenarios.
+
+## 💡 Key Takeaways
+
+- Confidentiality protects sensitive information.
+- Integrity ensures information remains accurate and trustworthy.
+- Availability keeps systems and services operational.
+- All three principles are essential for effective information security.
+- A weakness in any one principle can affect the overall security of an organization.
+
+## 🚀 Conclusion
+
+The CIA Triad is a fundamental concept in cybersecurity and provides the foundation for understanding information security.
+
+Completing this TryHackMe room helped reinforce my understanding of the three essential security principles and their importance in protecting digital assets.
+
+---
+
+**Disclaimer:** This repository is for educational purposes and documents my cybersecurity learning journey through TryHackMe.
+
+**Platform:** [TryHackMe](https://tryhackme.com/)
