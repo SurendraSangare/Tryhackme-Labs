@@ -1,0 +1,131 @@
+# 🔐 TryHackMe – Cryptography Concepts
+
+## 📌 Overview
+This repository documents my learning and hands-on practice from the **Cryptography Concepts** room on [TryHackMe](https://tryhackme.com/).
+
+Cryptography is the practice of securing information by converting readable data (plaintext) into an unreadable format (ciphertext) to protect it from unauthorized access.
+
+This room introduces fundamental cryptographic concepts, encryption techniques, hashing, and the importance of secure communication.
+
+## 🎯 Learning Objectives
+- Understand the fundamentals of cryptography.
+- Learn the difference between plaintext and ciphertext.
+- Understand encryption and decryption.
+- Explore symmetric and asymmetric encryption.
+- Understand hashing and its applications.
+- Learn about encoding and decoding.
+- Explore common cryptographic algorithms.
+
+## 📚 Concepts Covered
+
+### 1. Cryptography
+Cryptography is used to protect sensitive information and ensure secure communication.
+
+**Important terms:**
+- Plaintext: Original readable message.
+- Ciphertext: Encrypted, unreadable message.
+- Encryption: Converting plaintext into ciphertext.
+- Decryption: Converting ciphertext back into plaintext.
+- Key: Information used to encrypt or decrypt data.
+
+### 2. Symmetric Encryption
+Symmetric encryption uses the same key for both encryption and decryption.
+
+**Examples:**
+- AES
+- DES
+- 3DES
+
+### 3. Asymmetric Encryption
+Asymmetric encryption uses two mathematically related keys:
+- Public Key: Used to encrypt data or verify signatures.
+- Private Key: Used to decrypt data or create signatures.
+
+**Examples:**
+- RSA
+- ECC
+
+### 4. Hashing
+Hashing converts input data into a fixed-length hash value.
+
+Important properties:
+- One-way function.
+- Fixed-length output for a given algorithm.
+- Small input changes produce significantly different hashes.
+
+**Common hashing algorithms:**
+- MD5
+- SHA-1
+- SHA-256
+- SHA-512
+
+> Note: MD5 and SHA-1 are considered cryptographically broken for collision resistance. Use modern algorithms such as SHA-256 where appropriate.
+
+### 5. Encoding vs Encryption
+- Encoding: Changes data representation; it does not provide security.
+- Encryption: Protects information using cryptographic keys.
+- Hashing: Produces a one-way digest.
+
+Examples of encoding:
+- Base64
+- Hexadecimal
+- ASCII
+
+## 🛠️ Tools & Commands
+
+### Base64 Encoding
+```bash
+echo "Hello World" | base64
+```
+
+### Base64 Decoding
+```bash
+echo "SGVsbG8gV29ybGQ=" | base64 -d
+```
+
+### Generate SHA-256 Hash
+```bash
+echo -n "Hello World" | sha256sum
+```
+
+### Generate MD5 Hash
+```bash
+echo -n "Hello World" | md5sum
+```
+
+### OpenSSL Encryption Example
+```bash
+openssl enc -aes-256-cbc -salt -pbkdf2 \
+-in plaintext.txt -out encrypted.txt
+```
+
+### OpenSSL Decryption Example
+```bash
+openssl enc -d -aes-256-cbc -pbkdf2 \
+-in encrypted.txt -out decrypted.txt
+```
+
+## 💡 Key Takeaways
+- Cryptography protects data confidentiality and integrity.
+- Symmetric encryption uses one shared secret key.
+- Asymmetric encryption uses public and private key pairs.
+- Hashing is a one-way process commonly used for integrity verification.
+- Encoding is not encryption.
+- Strong cryptographic algorithms and proper key management are essential for security.
+
+## 🚀 Practical Learning
+Through this TryHackMe room, I explored the foundations of cryptography and learned how encryption, decryption, hashing, and encoding are used in cybersecurity.
+
+## 🏁 Conclusion
+This lab strengthened my understanding of fundamental cryptographic principles and their importance in cybersecurity, ethical hacking, and secure communication.
+
+**Platform:** TryHackMe  
+**Room:** Cryptography Concepts  
+**Category:** Cryptography / Cybersecurity  
+**Status:** Completed / In Progress
+
+---
+
+⭐ If you find this repository useful, feel free to explore and learn along with me!
+
+#TryHackMe #Cryptography #CyberSecurity #EthicalHacking #InfoSec #LearningJourney
