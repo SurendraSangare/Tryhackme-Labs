@@ -1,0 +1,75 @@
+# TryHackMe – Become a Hacker
+
+## 📌 Overview
+
+This repository documents my learning journey through the **Become a Hacker** room on TryHackMe. The lab introduces practical cybersecurity concepts, encourages hands-on exploration, and helps build a foundation in penetration testing and security assessment methodologies.
+
+The objective is to understand how security tools work, how to approach challenges methodically, and how different concepts come together during a security assessment.
+
+---
+
+## 🎯 Learning Objectives
+
+- Understand fundamental penetration testing methodologies.
+- Learn how to approach a security challenge systematically.
+- Explore reconnaissance and information gathering.
+- Understand how vulnerabilities can be identified and investigated.
+- Practice using command-line tools in a controlled lab environment.
+- Improve Linux command-line familiarity.
+- Develop problem-solving and troubleshooting skills.
+- Understand the importance of documentation during security assessments.
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Tool / Technology | Purpose |
+|---|---|
+| TryHackMe | Hands-on cybersecurity learning environment |
+| Linux Terminal | Command-line interaction and system exploration |
+| Networking Concepts | Understanding communication and connectivity |
+| Security Tools | Exploring tools used during security assessments |
+
+---
+
+## 📚 Topics Covered
+
+### 1. Reconnaissance
+Understanding the importance of gathering information before conducting a security assessment.
+
+### 2. Enumeration
+Learning how enumeration helps uncover useful information about systems, services and potential attack surfaces.
+
+### 3. Vulnerability Identification
+Understanding how to identify and investigate potential security weaknesses.
+
+### 4. Linux Command Line
+Practicing commands and learning how to navigate and interact with a Linux environment.
+
+### 5. Security Methodology
+Developing a structured approach to problem-solving, investigation and security testing.
+
+---
+
+## 🧠 Key Takeaways
+
+- A structured approach is more effective than randomly executing commands.
+- Reconnaissance and enumeration are essential steps in security assessments.
+- Understanding the underlying technology is more important than simply memorizing commands.
+- Documentation helps track findings, commands and lessons learned.
+- Hands-on labs improve technical understanding and problem-solving ability.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is intended strictly for educational purposes. All activities and experiments are performed within authorized environments such as TryHackMe.
+
+Never attempt to access systems without proper authorization.
+
+---
+
+## 📈 Learning Journey
+
+This room is part of my ongoing cybersecurity learning journey, where I practice hands-on labs, explore security tools, strengthen networking fundamentals, and develop practical skills in offensive and defensive security.
+
